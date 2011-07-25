@@ -1,0 +1,12 @@
+source 'http://rubygems.org'
+
+gem 'rails', '3.0.9'
+gem 'sqlite3'
+gem 'paperclip'
+gem 'capistrano'
+gem 'simple-navigation'
+gem 'simple_form'
+gem 'jquery-rails'
+gem 'mongrel'
+gem 'json'
+gem 'barista'
