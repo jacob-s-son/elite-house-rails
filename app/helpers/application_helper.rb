@@ -12,16 +12,16 @@ module ApplicationHelper
       {
         :key => sc.key,
         :name => sc.name,
-        :url => sub_category_furniture_index_path :sub_category => sc
+        :url => sub_category_furniture_index_path( :sub_category => sc )
       }
     end
   end
   
   def menu_items
-    categories = Categories.all
+    categories = Category.all
     result = []
     
-    categories.each do |category|
+    categories.map do |category|
       {
         :name => category.name,
         :key => category.key,

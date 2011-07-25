@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<style type="text/css">
+/* Reset */
+*{
+	padding: 0;
+	margin: 0;
+	font-family: verdana, arial;
+	font-size: 12px;
+}
+h3{
+	font-size: 1.3em;
+	margin: 10px;
+}
+p{
+	margin: 10px;
+}
+a{
+	text-decoration: none;
+	text-color: #007BEC;
+}
+a:hover{
+	text-decoration: underline;
+}
+a img{
+	border: none;
+	margin: 0 10px 0 0;
+}
+body{
+	background: #FFF;
+	padding: 50px;
+}
+/* Example style */
+
+</style>
+<script type="text/javascript" src="jQuery.js"></script>
+<script type="text/javascript" src="Groject.ImageSwitch.102.yui.js"></script>
+<script type="text/javascript">
+	var ImgIdx = 2;//To mark which image will be select next
+	
+	function PreloadImg(){
+		$.ImagePreload("images/pc1.jpg");
+		$.ImagePreload("images/pc2.jpg");
+		$.ImagePreload("images/pc3.jpg");
+	}
+	
+	$(document).ready(function(){
+		PreloadImg();
+		
+		$("#FlipInCard").click(function(){
+			if(!$(this).ImageAnimating()){
+				$(this).ImageSwitch({	Type:"FlipIn", 
+										NewImage:"images/pc"+ImgIdx+".jpg",
+										EndLeft: 80,
+										EndTop: -20,
+										StartOpacity: 1,
+										Speed: 500
+										});
+			}
+			ImgIdx++;
+			if(ImgIdx>3) ImgIdx = 1;
+		});	
+		
+		$("#FlipOutCard").click(function(){
+			if(!$(this).ImageAnimating()){
+				$(this).ImageSwitch({	Type:"FlipOut", 
+										NewImage:"images/pc"+ImgIdx+".jpg",
+										EndLeft: 80,
+										EndTop: -20,
+										StartOpacity: 1,
+										Speed: 500
+										});
+			}
+			ImgIdx++;
+			if(ImgIdx>3) ImgIdx = 1;
+		});		
+	});
+</script>
+</head>
+<body>
+	<div>
+		<h3>Playing Card</h3>
+		<p>This deck will flip in when you click on it</p>
+		<p><img id="FlipInCard" src="images/pc1.jpg"/></p>
+		<p>This deck will flip out when you click on it</p>
+		<p><img id="FlipOutCard" src="images/pc2.jpg"/></p>
+	</div>
+</body>
+</html>

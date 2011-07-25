@@ -9,21 +9,19 @@
 <body>
 	<%= image_tag "bg.jpg" %>
 	<!-- <img src="images/bg.jpg" alt="background image" id="bg" /> -->
-	<div id="header">
+	<div id="header" class="<%= "hidden" if controller.class == CategoriesController %>">
 		<div id="header_logo">
 		</div>
 		<div id="gallery_container">
 		</div>
 		<div id="language_select_container">
-			<select>
-				<option value=""></option>
-			</select>
 		</div>
 	</div>
 	<div id="content">
 		<%= render :partial => "layouts/main_menu" %>
-		<%= render_navigation :items => Categories.all %>
+		<%= render_navigation :items => menu_items %>
 		<div id="page_content">
+		  <%= yield %>
 		</div>
 	</div>
 </body>

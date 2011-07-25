@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<style type="text/css">
+/* Reset */
+*{
+	padding: 0;
+	margin: 0;
+	font-family: verdana, arial;
+	font-size: 12px;
+}
+h3{
+	font-size: 1.3em;
+	margin: 10px;
+}
+p{
+	margin: 10px;
+}
+a{
+	text-decoration: none;
+	text-color: #007BEC;
+}
+a:hover{
+	text-decoration: underline;
+}
+a img{
+	border: none;
+	margin: 0 10px 0 0;
+}
+body{
+	background: #D9D9D9;
+}
+/* Example style */
+div{
+	margin: 50px auto;
+	width: 200px;
+	border: 1px solid black;
+}
+</style>
+
+<script type="text/javascript" src="jQuery.js"></script>
+<script type="text/javascript" src="Groject.ImageSwitch.102.yui.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".TriggerEffect").hover(function(e){
+			$(this).children("img").ImageStop(true,false);
+			$(this).children("img").ImageSwitch({	Type:"FlyIn", 
+													NewImage:$(this).children("img").attr("src"), 
+													EffectOriginal: false,
+													StartLeft: -20,
+													Speed: 500});
+			e.preventDefault();
+		},function(e){
+			if(!$(this).children("img").ImageAnimating())
+			{
+				$(this).children("img").ImageStop(true,false);
+				$(this).children("img").ImageSwitch({	Type:"FlyOut", 
+														NewImage:$(this).children("img").attr("src"), 
+														EffectOriginal: false,
+														EndLeft: 20,
+														Speed: 500});
+														
+				e.preventDefault();			
+			}
+		});
+	});
+</script>
+</head>
+<body>
+	<div>
+		<h3>SUBSCRIBE ME</h3>
+		<p>Get latest blog post by:</p>
+		<p>
+			<a href="#" class="TriggerEffect"><img src="Images/SmallMail.jpg" alt=""/>Email</a> <br /> 
+			<a href="#" class="TriggerEffect"><img src="Images/SmallRSS.jpg" alt=""/>RSS</a>
+		</p>
+	</div>
+</body>
+</html>

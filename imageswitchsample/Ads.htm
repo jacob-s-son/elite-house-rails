@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<style type="text/css">
+/* Reset */
+*{
+	padding: 0;
+	margin: 0;
+	font-family: verdana, arial;
+	font-size: 12px;
+}
+h3{
+	font-size: 1.3em;
+	margin: 10px;
+}
+p{
+	margin: 10px;
+}
+a{
+	text-decoration: none;
+	text-color: #007BEC;
+}
+a:hover{
+	text-decoration: underline;
+}
+a img{
+	border: none;
+	margin: 0 10px 0 0;
+}
+body{
+	background: #FFF;
+	padding: 50px;
+}
+/* Example style */
+#AdsDiv{
+	position: relative;
+	overflow: hidden;
+}
+#Description{
+	position: absolute;
+	background: #dadada;
+	padding: 5px;
+	top:0;
+	left: 0;
+	width: 140px;
+	height: 12px;
+	opacity: 0.8;
+}
+</style>
+<script type="text/javascript" src="jQuery.js"></script>
+<script type="text/javascript" src="Groject.ImageSwitch.102.yui.js"></script>
+<script type="text/javascript">
+	var ImgIdx = 1;//To mark which image will be select next
+	var ListEffect = [	["I make <strong>3D</strong>", "I do <strong>script</strong>", "I play <strong>Lego</strong>"],
+						["ScrollIn", "ScrollOut", "ScrollIn"],
+						["TopDown", "LeftRight", "DownTop"]];
+	function PreloadImg(){
+		$.ImagePreload("images/Ads1.jpg");
+		$.ImagePreload("images/Ads2.jpg");
+		$.ImagePreload("images/Ads3.jpg");
+	}
+	
+	var StartAds = function(){
+		$("#Description").animate({"top": "-20px"},500,function(){
+			if(!$("#Ads").ImageAnimating()){
+				$("#Ads").ImageSwitch({	Type:ListEffect[1][ImgIdx], 
+										NewImage:"images/Ads"+(ImgIdx+1)+".jpg",
+										Direction: ListEffect[2][ImgIdx],
+										StartOpacity: 1,
+										EndOpacity: 1,
+										Speed: 500
+										},function(){
+											$("#Description").html(ListEffect[0][ImgIdx]);
+											$("#Description").animate({"top": "0px"},500);
+											ImgIdx++;
+											if(ImgIdx>2) ImgIdx = 0;												
+										});												
+			}
+		});
+	}		
+	
+	$(document).ready(function(){
+		PreloadImg();
+		setInterval(StartAds,3000);
+	});
+</script>
+</head>
+<body>
+	<div>
+		<h3>Ads style</h3>
+		WHAT ABOUT ME?
+		<div id="AdsDiv">
+			<div id="Description">I make <strong>3D</strong></div>
+			<img id="Ads" src="images/Ads1.jpg"/>
+		<div>
+	</div>
+</body>
+</html>

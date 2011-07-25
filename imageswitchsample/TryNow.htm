@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<style type="text/css">
+/* Reset */
+*{
+	padding: 0;
+	margin: 0;
+	font-family: verdana, arial;
+	font-size: 12px;
+}
+h3{
+	font-size: 1.3em;
+	margin: 10px;
+}
+p{
+	margin: 10px;
+}
+a{
+	text-decoration: none;
+	text-color: #007BEC;
+}
+a:hover{
+	text-decoration: underline;
+}
+a img{
+	border: none;
+	margin: 0 10px 0 0;
+}
+body{
+	background: #FFF;
+	padding: 50px;
+}
+/* Example style */
+.SplashFrame{
+	background: url(Images/slashframe.jpg) no-repeat 0 0;
+	width: 497px;
+	height: 236px;
+	margin: 0 auto;
+	padding: 27px 0 0 36px;
+}
+.SlashEff{
+	background: url(Images/tryitnow.jpg) no-repeat 0 0;
+	width: 550px;
+	height:62px;
+	margin: 20px auto 0;
+	padding: 5px 0 0 60px;
+}
+.SlashEff ul li{
+	float: left;
+	list-style-image: none;
+	list-style-type: none;	
+	width: 100px;
+	cursor: pointer;
+}
+.SlashEff ul li:hover{
+	text-decoration: underline;
+}
+</style>
+<script type="text/javascript" src="jQuery.js"></script>
+<script type="text/javascript" src="Groject.ImageSwitch.102.yui.js"></script>
+<script type="text/javascript">
+	var ImgIdx = 2;//To mark which image will be select next
+	
+	function PreloadImg(){
+		$.ImagePreload("images/slash2.jpg");
+		$.ImagePreload("images/slash3.jpg");
+		$.ImagePreload("images/slash4.jpg");
+		$.ImagePreload("images/slash5.jpg");
+	}
+	$(document).ready(function(){
+		PreloadImg();
+		
+		setInterval( function() { 
+		  $(".Slash").ImageSwitch({Type:"FlyOut", 
+										NewImage:"images/slash"+ImgIdx+".jpg", speed: 4000
+									});
+		  ImgIdx++;
+		  if(ImgIdx>5) ImgIdx = 1;
+		}, 4000);
+		
+		$(".SlashEff ul li").click(function(){
+				
+		});		
+	});
+</script>
+</head>
+<body>
+	<div>
+		<h3>TRY EFFECTS</h3>
+		<div class="SplashFrame">
+			<img src="images/slash1.jpg" alt="Slash" class="Slash"/>
+		</div>			
+		<div class="SlashEff">
+			<ul>
+				<li class="TryFadeIn" rel="FadeIn">Fade in</li>
+				<li class="TryFlyIn"  rel="FlyIn">Fly in</li>
+				<li class="TryFlyOut"  rel="FlyOut">Fly out</li>
+				<li class="TryFlipIn"  rel="FlipIn">Flip in</li>
+				<li class="TryFlipOut"  rel="FlipOut">Flip out</li>				
+				<li class="TryScroll"  rel="ScrollIn">Scroll in</li>
+				<li class="TryScroll"  rel="ScrollOut">Scroll out</li>
+				<li class="TrySingleDoor" rel="SingleDoor">Single Door</li>
+				<li class="TryDoubleDoor" rel="DoubleDoor">Double Door</li>
+			</ul>		
+		</div>
+	</div>
+	<p id="Debug"></p>	
+</body>
+</html>

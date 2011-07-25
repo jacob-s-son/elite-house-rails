@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<style type="text/css">
+/* Reset */
+*{
+	padding: 0;
+	margin: 0;
+	font-family: verdana, arial;
+	font-size: 12px;
+}
+h3{
+	font-size: 1.3em;
+	margin: 10px;
+}
+p{
+	margin: 10px;
+}
+a{
+	text-decoration: none;
+	text-color: #007BEC;
+}
+a:hover{
+	text-decoration: underline;
+}
+a img{
+	border: none;
+	margin: 0 10px 0 0;
+}
+body{
+}
+/* Example style */
+div{
+	margin: 50px auto;
+	width: 170px;
+}
+</style>
+
+<script type="text/javascript" src="jQuery.js"></script>
+<script type="text/javascript" src="Groject.ImageSwitch.102.yui.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".TriggerEffect").hover(function(e){
+			$("#RSSImg").ImageStop(true,true);
+			$("#RSSImg").ImageSwitch({	Type:"FadeIn", 
+										NewImage:"Images/RSSOrange.jpg",
+										EffectOriginal: false, Speed: 500});
+			e.preventDefault();
+		},function(e){
+			$("#RSSImg").ImageStop(true,true);
+			$("#RSSImg").ImageSwitch({	Type:"FadeIn", 
+										NewImage:"Images/RSSbw.jpg", 
+										EffectOriginal: false, speed: 500});
+													
+			e.preventDefault();			
+		});
+	});
+</script>
+</head>
+<body>
+	<div>
+		<a href="#" class="TriggerEffect">
+			<img id="RSSImg" src="Images/RSSbw.jpg" alt=""/>
+		</a> 
+	</div>
+</body>
+</html>

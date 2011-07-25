@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<style type="text/css">
+/* Reset */
+*{
+	padding: 0;
+	margin: 0;
+	font-family: verdana, arial;
+	font-size: 12px;
+}
+h3{
+	font-size: 1.3em;
+	margin: 10px;
+}
+p{
+	margin: 10px;
+}
+a{
+	text-decoration: none;
+	text-color: #007BEC;
+}
+a:hover{
+	text-decoration: underline;
+}
+a img{
+	border: none;
+	margin: 0 10px 0 0;
+}
+body{
+	background: #FFF;
+	padding: 50px;
+}
+/* Example style */
+#ClockDiv{
+	position: relative;
+	overflow: hidden;
+	background: url(images/clockframe.jpg);
+	width: 293px;
+	height: 82px;
+	margin: 10px auto;
+}
+.NumberDiv{
+	background: #3f4145;
+	position: absolute;
+}
+#divH{
+	top: 14px;
+	left:18px;
+}
+#divH1{
+	top: 14px;
+	left:57px;
+}
+#divM{
+	top: 14px;
+	left:108px;
+}
+#divM1{
+	top: 14px;
+	left:147px;
+}
+#divS{
+	top: 14px;
+	left:196px;
+}
+#divS1{
+	top: 14px;
+	left:235px;
+}
+</style>
+<script type="text/javascript" src="jQuery.js"></script>
+<script type="text/javascript" src="Groject.ImageSwitch.102.yui.js"></script>
+<script type="text/javascript">
+	var ImgIdx = 1;
+	var DrawClock = function(){
+		var CurrentDate = new Date();
+		
+			//Set for seconds
+			var sec1 = 0;
+			var sec = 0;
+			if((CurrentDate.getSeconds()+"").length>1){
+				sec1 =(CurrentDate.getSeconds()+"").substr(1,1);
+				sec = (CurrentDate.getSeconds()+"").substr(0,1);
+			}else{
+				sec1 = (CurrentDate.getSeconds()+"").substr(0,1);
+			}		
+			if($("#Sec").attr("src") != "images/c"+sec+".jpg")
+			{
+				$("#Sec").ImageSwitch({	Type:"ScrollIn", 
+										NewImage:"images/c"+sec+".jpg",
+										Direction: "TopDown",
+										StartOpacity: 1,
+										Speed: 500
+										});
+			}
+			
+			$("#Sec1").ImageSwitch({Type:"ScrollIn", 
+									NewImage:"images/c"+sec1+".jpg",
+									Direction: "TopDown",
+									StartOpacity: 1,
+									Speed: 500
+									});
+			//Set for min
+			var min1 = 0;
+			var min = 0;
+			if((CurrentDate.getMinutes()+"").length>1){
+				min1 =(CurrentDate.getMinutes()+"").substr(1,1);
+				min =(CurrentDate.getMinutes()+"").substr(0,1);
+			}else{
+				min1=(CurrentDate.getMinutes()+"").substr(0,1);
+			}		
+			
+			if($("#Min").attr("src") != "images/c"+min+".jpg")
+			{
+				$("#Min").ImageSwitch({	Type:"ScrollIn", 
+										NewImage:"images/c"+min+".jpg",
+										Direction: "TopDown",
+										StartOpacity: 1,
+										Speed: 500
+										});
+			}
+			if($("#Min1").attr("src") != "images/c"+min1+".jpg")
+			{			
+				$("#Min1").ImageSwitch({Type:"ScrollIn", 
+										NewImage:"images/c"+min1+".jpg",
+										Direction: "TopDown",
+										StartOpacity: 1,
+										Speed: 500
+										});
+			}
+			//Set for hour
+			var hour1 = 0;
+			var hour = 0;
+			if((CurrentDate.getHours()+"").length>1){
+				hour1 =(CurrentDate.getHours()+"").substr(1,1);
+				hour =(CurrentDate.getHours()+"").substr(0,1);
+			}else{
+				hour1=(CurrentDate.getHours()+"").substr(0,1);
+			}		
+			
+			if($("#Hour").attr("src") != "images/c"+hour+".jpg")
+			{
+				$("#Hour").ImageSwitch({Type:"ScrollIn", 
+										NewImage:"images/c"+hour+".jpg",
+										Direction: "TopDown",
+										StartOpacity: 1,
+										Speed: 500
+										});
+			}
+			if($("#Hour1").attr("src") != "images/c"+hour1+".jpg")
+			{			
+				$("#Hour1").ImageSwitch({Type:"ScrollIn", 
+										NewImage:"images/c"+hour1+".jpg",
+										Direction: "TopDown",
+										StartOpacity: 1,
+										Speed: 500
+										});
+			}				
+	}
+	
+	$(document).ready(function(){
+		setInterval(DrawClock,1000);
+	});
+</script>
+</head>
+<body>
+	<div>
+		<h3>Flip clock - What time now?</h3>
+		<div id="ClockDiv">		
+			<div id="divH" class="NumberDiv">
+				<img id="Hour" src="images/C0.jpg"/>
+			</div>		
+			<div id="divH1" class="NumberDiv SectionDiv">
+				<img id="Hour1" src="images/C0.jpg"/>
+			</div>				
+			<div id="divM" class="NumberDiv">
+				<img id="Min" src="images/C0.jpg"/>
+			</div>		
+			<div id="divM1" class="NumberDiv SectionDiv">
+				<img id="Min1" src="images/C0.jpg"/>
+			</div>				
+			<div id="divS" class="NumberDiv">
+				<img id="Sec" src="images/C0.jpg"/>
+			</div>
+			<div id="divS1" class="NumberDiv">
+				<img id="Sec1" src="images/C0.jpg"/>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
