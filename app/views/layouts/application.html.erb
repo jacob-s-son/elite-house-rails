@@ -3,12 +3,28 @@
 <head>
   <title>EliteHouse</title>
   <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
+  <%= javascript_include_tag :all %>
   <%= csrf_meta_tag %>
 </head>
 <body>
-
-<%= yield %>
-
+	<%= image_tag "bg.jpg" %>
+	<!-- <img src="images/bg.jpg" alt="background image" id="bg" /> -->
+	<div id="header">
+		<div id="header_logo">
+		</div>
+		<div id="gallery_container">
+		</div>
+		<div id="language_select_container">
+			<select>
+				<option value=""></option>
+			</select>
+		</div>
+	</div>
+	<div id="content">
+		<%= render :partial => "layouts/main_menu" %>
+		<%= render_navigation :items => Categories.all %>
+		<div id="page_content">
+		</div>
+	</div>
 </body>
 </html>
