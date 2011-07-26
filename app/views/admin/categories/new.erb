@@ -1,5 +1,5 @@
 
-<%= simple_form_for :category do |f| %>
+<%= simple_form_for [:admin, @category] do |f| %>
 	<%=	f.input :name %>
 	<%=	f.input :name_ru %>
 	<%=	f.button :submit, :value => "Saglabāt" %>

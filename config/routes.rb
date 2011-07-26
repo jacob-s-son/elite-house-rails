@@ -8,6 +8,10 @@ EliteHouse::Application.routes.draw do
      resources :furniture, :only => [ :index, :show ]
    end
    
+   resources :categories, :only => [ :index ] do
+     resources :furniture, :only => [ :index, :show ]
+   end
+   
    namespace :admin do
      resources :categories, :sub_categories, :furniture#, :only => [ :new, :update, :destroy, :edit, :create ]
    end

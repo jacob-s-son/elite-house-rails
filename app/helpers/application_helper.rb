@@ -2,8 +2,10 @@ module ApplicationHelper
   def url_for_category(category)
     if category.sub_categories.size > 1
       category_sub_categories :category => category
-    else
+    elsif category.sub_categories.size == 1
       sub_category_furniture_index_path :sub_category => category.sub_categories.first
+    else
+      category_furniture_index_path(:category_id => category)
     end
   end
   
@@ -21,13 +23,16 @@ module ApplicationHelper
     categories = Category.all
     result = []
     
-    categories.map do |category|
+    result = categories.map do |category|
       {
         :name => category.name,
         :key => category.key,
-        :url => url_for_category(category),
-        :items => sub_menu_items(category)
+        :url => url_for_category(category)
+        # :items => sub_menu_items(category)
       }
     end
+    
+    debugger
+    result
   end
 end

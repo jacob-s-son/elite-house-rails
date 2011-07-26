@@ -1,0 +1,5 @@
+<ul id="category_list_admin">
+  <%  @categories.each do |c| %>
+    <li><a href="<%= edit_admin_category_path(:id => c) %>"><%= c.name %></a></li>
+  <% end %>
+</ul>
