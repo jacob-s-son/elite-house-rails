@@ -20,19 +20,14 @@ module ApplicationHelper
   end
   
   def menu_items
-    categories = Category.all
-    result = []
-    
-    result = categories.map do |category|
+    Category.all.map do |category|
       {
         :name => category.name,
-        :key => category.key,
-        :url => url_for_category(category)
+        :key => "main_#{category.id}".to_sym,
+        :url => url_for_category(category),
+        :options => { :container_id => 'main_menu' }
         # :items => sub_menu_items(category)
       }
     end
-    
-    debugger
-    result
   end
 end

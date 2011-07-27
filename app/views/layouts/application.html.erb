@@ -7,7 +7,7 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-	<%= image_tag "bg.jpg" %>
+	<%= image_tag "bg.jpg", :id => "bg" %>
 	<!-- <img src="images/bg.jpg" alt="background image" id="bg" /> -->
 	<div id="header" class="<%= "hidden" if controller.class == CategoriesController %>">
 		<div id="header_logo">
@@ -18,7 +18,15 @@
 		</div>
 	</div>
 	<div id="content">
-		<%= render_navigation :items => menu_items %>
+		<div id="main_menu_container">
+			<div id="menu_container">
+				<%= render_navigation (:items => :menu_items)%>
+			</div>
+			<div id="separator_container">
+				<!-- <img id="separator" src="images/line_separator_big.png"> -->
+				<%= image_tag "line_separator_big.png", :id => "separator" %>
+			</div>
+		</div>
 		<div id="page_content">
 		  <%= yield %>
 		</div>

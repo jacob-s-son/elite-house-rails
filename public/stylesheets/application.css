@@ -30,11 +30,15 @@ div#content {
 	border-collapse:collapse;
 }*/
 
+div#main_menu_container {
+	float:left;
+}
+
 div#menu_container {
 	min-width:15%;
 /*	margin-right:px;*/
 	padding-right:15px;
-	float:left;
+	float:left;	
 }
 
 div#logo_container {
@@ -49,12 +53,6 @@ ul#main_menu {
 	list-style-type:none;
 }
 
-img#logo {
-	margin-top:50%;
-	width:125px;
-	height:125px;
-}
-
 div#separator_container {
 	float:left;
 }
@@ -64,6 +62,17 @@ img#separator {
 	height:500px;
 /*	float:left;*/
 }
+
+div#page_content {
+	float:left;
+}
+
+img#logo {
+	margin-top:50%;
+	width:125px;
+	height:125px;
+}
+
 
 a {
 	font-family: arial, verdana, sans-serif;
