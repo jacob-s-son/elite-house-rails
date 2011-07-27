@@ -24,7 +24,8 @@
 			</div>
 			<div id="separator_container">
 				<!-- <img id="separator" src="images/line_separator_big.png"> -->
-				<%= image_tag "line_separator_big.png", :id => "separator" %>
+				<%= image_tag "separator_line_left.png", :id => "separator", :class => "separator", :onclick => "change_separator(1)" %>
+				<%= image_tag "separator_line_right.png", :id => "separator_2", :class => "separator hidden", :onclick => "change_separator(2)" %>
 			</div>
 		</div>
 		<div id="page_content">

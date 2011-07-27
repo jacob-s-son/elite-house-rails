@@ -13,7 +13,7 @@
   margin-bottom: 10px;
 }
 
-.simple_form div.boolean, .simple_form input[type='submit'] {
+.simple_form div.boolean, .simple_form input[type='submit'], .simple_form input[type='file'] {
   margin-left: 120px;
 }
 

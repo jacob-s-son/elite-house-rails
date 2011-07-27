@@ -57,10 +57,13 @@ div#separator_container {
 	float:left;
 }
 
-img#separator {
-	width:5px;
+img.separator {
+	width:45px;
 	height:500px;
-/*	float:left;*/
+}
+
+img.hidden {
+	display:none;
 }
 
 div#page_content {

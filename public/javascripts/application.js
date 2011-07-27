@@ -1,2 +1,14 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
+
+function change_separator(separator_number) {
+	if( separator_number == 1)
+	{
+		$("#separator").addClass("hidden");
+		$("#separator_2").removeClass("hidden");
+	}
+	else
+	{
+		$("#separator").removeClass("hidden");
+		$("#separator_2").addClass("hidden");
+		
+	}
+}

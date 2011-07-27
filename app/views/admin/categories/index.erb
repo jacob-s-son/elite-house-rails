@@ -1,5 +1,22 @@
-<ul id="category_list_admin">
-  <%  @categories.each do |c| %>
-    <li><a href="<%= edit_admin_category_path(:id => c) %>"><%= c.name %></a></li>
-  <% end %>
-</ul>
+<% unless @categories.empty? %>
+  <table class="admin_table" id="sub_category_list_admin">
+    <tr>
+      <th>Category Name</th>
+      <th>Category Priority</th>
+    </tr>
+    
+    <%  @categories.each do |c| %>
+      <tr>
+        <td>
+          <a class="admin "href="<%= edit_admin_category_path(:id => c) %>"><%= c.name %></a>
+        </td>
+        <td>
+          <%= c.priority %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+<% else %>
+  <p class="empty_list"> No categories added yet.</p>
+<% end %>
+  <a class="admin" href="<%= new_admin_category_path %>"> Add new category </a>

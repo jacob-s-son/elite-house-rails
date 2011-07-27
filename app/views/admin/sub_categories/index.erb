@@ -1,0 +1,30 @@
+<% unless @sub_categories.empty? %>
+  <table class="admin_table" id="category_list_admin">
+    <tr>
+      <th>Sub Category Name</th>
+      <th>Sub Category Priority</th>
+      <th>Category</th>
+      <th>Image</th>
+    </tr>
+    
+    <%  @sub_categories.each do |c| %>
+      <tr>
+        <td>
+          <a class="admin" href="<%= edit_admin_sub_category_path(:id => c) %>"><%= c.name %></a>
+        </td>
+        <td>
+          <%= c.priority %>
+        </td>
+        <td>
+          <%= c.category.name %>
+        </td>
+        <td>
+          <%= image_tag c.image.url(:thumb) if c.image_file_name %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+<% else %>
+  <p class="empty_list"> No sub categories added yet.</p>
+<% end %>
+  <a class="admin" href="<%= new_admin_sub_category_path %>"> Add new sub_category </a>

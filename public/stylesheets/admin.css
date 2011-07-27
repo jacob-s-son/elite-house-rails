@@ -1,3 +1,27 @@
 ul#category_list_admin a {
 	color:black !important;
 }
+
+ul#sub_category_list_admin a {
+	color:black !important;
+}
+
+p.empty_list {
+	color:black;
+}
+
+a.admin {
+	color:black;
+}
+
+table.admin_table {
+	border-style:solid;
+	border-width:2px;
+}
+
+table.admin_table th,td{
+	min-width:150px;
+	border-style:solid;
+	border-width:2px;
+	
+}

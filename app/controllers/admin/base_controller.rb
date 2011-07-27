@@ -3,6 +3,10 @@ class Admin::BaseController < ApplicationController
   USERS = { "admin" => "onl1-el1te-h0use-stuff" }
   # before_filter :authenticate
   
+  def admin_actions
+    render "admin_actions"
+  end
+  
   private
   def authenticate
     authenticate_or_request_with_http_digest do |username|

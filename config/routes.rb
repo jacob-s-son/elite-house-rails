@@ -14,6 +14,7 @@ EliteHouse::Application.routes.draw do
    
    namespace :admin do
      resources :categories, :sub_categories, :furniture#, :only => [ :new, :update, :destroy, :edit, :create ]
+     match '/' => "base#admin_actions"
    end
    
    root :to => 'categories#index'

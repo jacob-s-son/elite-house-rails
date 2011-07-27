@@ -1,6 +1,8 @@
-class Admin::CategoriesController < Admin::BaseController 
+class Admin::CategoriesController < Admin::BaseController
+  before_filter :load_category , :only => [:edit, :update]
+  
   def index
-    @categories = Category.all
+    @categories = Category.find(:all, :order => "priority DESC")
   end
   
   def new
@@ -8,7 +10,6 @@ class Admin::CategoriesController < Admin::BaseController
   end
   
   def edit
-    @category = Category.find(params[:id])
     render :new
   end
   
@@ -21,13 +22,16 @@ class Admin::CategoriesController < Admin::BaseController
   end
   
   def update
-    debugger
-    @category = Category.find(params[:id])
-    
     if @category.update_attributes(params[:category])
       redirect_to admin_categories_path
     else
       render :new
     end
+  end
+  
+  private
+  
+  def load_category
+    @category = Category.find(params[:id])
   end
 end

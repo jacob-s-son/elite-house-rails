@@ -1,7 +1,12 @@
-<%= simple_form_for @sub_category do |f| %>
+<%= simple_form_for [:admin, @sub_category], :html => { :multipart => true } do |f| %>
 	<%=	f.input :name %>
 	<%=	f.input :name_ru %>
 	<%=	f.input :description, :as => :text, :input_html => {:columns => 6, :rows => 4} %>
 	<%=	f.input :description_ru, :as => :text, :input_html => {:columns => 6, :rows => 4} %>
+	<%=	f.input :priority %>
+	<%= f.association :category, :collection => Category.all(:order => 'name')%>
+	<div class="input file optional">
+	  <%= f.file_field :image %>
+	</div>
 	<%=	f.button :submit, :value => "Saglabāt" %>
 <% end %>
