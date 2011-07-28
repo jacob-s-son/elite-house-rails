@@ -23,7 +23,7 @@ SimpleNavigation::Configuration.run do |navigation|
 
   # The auto highlight feature is turned on by default.
   # This turns it off globally (for the whole plugin)
-  # navigation.auto_highlight = false
+  navigation.auto_highlight = true
 
   # Define the primary navigation
   navigation.items do |primary|

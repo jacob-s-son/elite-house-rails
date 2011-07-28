@@ -53,6 +53,10 @@ ul#main_menu {
 	list-style-type:none;
 }
 
+ul#sub_menu > li {
+	padding-right:10px;
+}
+
 div#separator_container {
 	float:left;
 }
@@ -101,6 +105,10 @@ a:hover {
 	color: #bfc2c9;
 }
 
+a.selected {
+	font-weight:bolder;
+}
+
 p {
 	font-family: arial, verdana, sans-serif;
 	font-size: 22px;
@@ -130,4 +138,20 @@ div#footer {
 
 div.hidden {
 	display:none;
+}
+
+table#furniture_table {
+	border-width:0px;
+	width:100%;
+	margin-top:30%;
+}
+
+table#furniture_table td{
+	border-width:0px;
+}
+
+h3 {
+	font-family: "ff-scala-web-1","ff-scala-web-2","Georgia",serif;
+	color:white;
+	font-style:italic;
 }

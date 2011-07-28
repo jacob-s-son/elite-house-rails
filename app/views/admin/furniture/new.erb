@@ -1,4 +1,4 @@
-<%= simple_form_for [:admin, @furniture], :html => { :multipart => true } do |f| %>
+<%= simple_form_for [:admin, @furniture], :url => admin_furniture_index_path, :html => { :multipart => true } do |f| %>
 	<%=	f.input :name %>
 	<%=	f.input :name_ru %>
 	<%=	f.input :description_lv, :as => :text, :input_html => {:columns => 6, :rows => 4} %>

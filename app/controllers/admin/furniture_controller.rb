@@ -14,7 +14,7 @@ class Admin::FurnitureController < Admin::BaseController
   end
 
   def create
-    @furniture = Furniture.new(params[:sub_category])
+    @furniture = Furniture.new(params[:furniture])
 
     if @furniture.save
       redirect_to admin_furniture_index_path
@@ -24,7 +24,7 @@ class Admin::FurnitureController < Admin::BaseController
   end
 
   def update
-    if @furniture.update_attributes(params[:sub_category])
+    if @furniture.update_attributes(params[:furniture])
       redirect_to admin_furniture_index_path
     else
       render :new

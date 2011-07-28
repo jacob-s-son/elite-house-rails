@@ -1,11 +1,20 @@
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+      $('a[rel*=facebox]').facebox({
+        loadingImage : "<%= image_path('loading.gif')%>",
+        closeImage   : "<%= image_path('closelabel.png')%>"
+      })
+    });
+  </script>
 <table id="furniture_table">
-	<% @furniture_per_row = 4 %>
-	<% (0..( ( @furniture.size / @furniture_per_row ) ) - 1 ).each do |nr| %>
+	<% @furniture_per_row = 3 %>
+	<% (0..last_furniture_row).each do |nr| %>
 		<tr>
-			<% @furniture.slice(nr*@furniture_per_row, @furniture_per_row) do |f| %>
+			<% sliced_furniture_array(nr).each do |f| %>
 				<td>
-					<%= image_tag f.image.url(:thumb), :href => furniture_url(f) %><br />
-					<%= f.name %>
+				  <%= link_to image_tag (f.image.url(:medium), :border =>0) , category_furniture_path(:id => f, :category_id => f.category), :rel =>"facebox" %>
+				  <br />
+					<h3><%= f.name %></h3>
 				</td>
 			<% end %>
 		</tr>
