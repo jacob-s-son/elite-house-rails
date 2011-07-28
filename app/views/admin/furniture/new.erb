@@ -1,0 +1,13 @@
+<%= simple_form_for [:admin, @furniture], :html => { :multipart => true } do |f| %>
+	<%=	f.input :name %>
+	<%=	f.input :name_ru %>
+	<%=	f.input :description_lv, :as => :text, :input_html => {:columns => 6, :rows => 4} %>
+	<%=	f.input :description_ru, :as => :text, :input_html => {:columns => 6, :rows => 4} %>
+	<%=	f.input :priority %>
+	<%= f.association :category, :collection => Category.all(:order => 'name')%>
+	<%= f.association :sub_category, :collection => SubCategory.all(:order => 'name')%>
+	<div class="input file optional">
+	  <%= f.file_field :image %>
+	</div>
+	<%=	f.button :submit, :value => "Saglabāt" %>
+<% end %>

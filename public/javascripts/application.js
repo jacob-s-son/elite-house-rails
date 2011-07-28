@@ -12,3 +12,7 @@ function change_separator(separator_number) {
 		
 	}
 }
+
+// jQuery(document).ready(function($) {
+//   $('a[rel*=facebox]').facebox() 
+// })

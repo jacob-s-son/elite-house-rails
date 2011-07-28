@@ -1,8 +1,6 @@
 module ApplicationHelper
   def url_for_category(category)
-    if category.sub_categories.size > 1
-      category_sub_categories :category_id => category
-    elsif category.sub_categories.size == 1
+    if category.sub_categories.size > 0
       sub_category_furniture_index_path :sub_category_id => category.sub_categories.first
     else
       category_furniture_index_path(:category_id => category)
@@ -26,8 +24,12 @@ module ApplicationHelper
         :key => "main_#{category.id}".to_sym,
         :url => url_for_category(category),
         :options => { :container_id => 'main_menu' }
-        # :items => sub_menu_items(category)
+        :items => sub_menu_items(category)
       }
     end
+  end
+  
+  def furniture_url
+    
   end
 end
