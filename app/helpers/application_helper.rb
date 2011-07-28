@@ -1,9 +1,9 @@
 module ApplicationHelper
   def url_for_category(category)
     if category.sub_categories.size > 1
-      category_sub_categories :category => category
+      category_sub_categories :category_id => category
     elsif category.sub_categories.size == 1
-      sub_category_furniture_index_path :sub_category => category.sub_categories.first
+      sub_category_furniture_index_path :sub_category_id => category.sub_categories.first
     else
       category_furniture_index_path(:category_id => category)
     end
