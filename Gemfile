@@ -10,8 +10,8 @@ gem 'simple_form', '1.4.2'
 gem 'jquery-rails', '1.0.12'
 gem 'mongrel', '1.1.5'
 gem 'json', '1.5.3'
-gem 'barista', '1.2.1'
 
 group :development, :test do
   gem "ruby-debug"
+	gem 'barista', '1.2.1'
 end
