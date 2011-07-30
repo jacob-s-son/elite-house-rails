@@ -6,6 +6,7 @@
       <th>Category</th>
       <th>Sub Category</th>
       <th>Image</th>
+      <th>&nbsp;</th>
     </tr>
     
     <%  @furniture.each do |c| %>
@@ -23,7 +24,10 @@
           <%= c.sub_category.name %>
         </td>
         <td>
-          <%= image_tag c.image.url(:thumb) if c.image_file_name %>
+          <%= image_tag c.main_image.url(:thumb) unless c.images.empty? %>
+        </td>
+        <td>
+          <%= link_to "Delete", { :controller => "admin/furniture", :action => "destroy", :id => c.id }, :class => "admin", :method => :delete, :confirm => "Are you sure?" %>
         </td>
       </tr>
     <% end %>

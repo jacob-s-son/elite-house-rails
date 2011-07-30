@@ -3,6 +3,7 @@
     <tr>
       <th>Category Name</th>
       <th>Category Priority</th>
+      <th>&nbsp;</th>
     </tr>
     
     <%  @categories.each do |c| %>
@@ -12,6 +13,9 @@
         </td>
         <td>
           <%= c.priority %>
+        </td>
+        <td>
+          <%= link_to "Delete", { :controller => "admin/categories", :action => "destroy", :id => c.id }, :class => "admin", :method => :delete, :confirm => "Are you sure?" %>
         </td>
       </tr>
     <% end %>

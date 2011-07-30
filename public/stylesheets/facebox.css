@@ -20,7 +20,7 @@
 
 #facebox .content {
   display:table;
-  width: 370px;
+/*  width: 100%;*/
   padding: 10px;
   background: #fff;
   -webkit-border-radius:4px;
@@ -77,4 +77,23 @@
 .facebox_overlayBG {
   background-color: #000;
   z-index: 99;
+}
+
+#facebox  div#show_left_column {
+	float:left;
+	margin-right:10px;
+}
+
+#facebox div#show_right_column {
+	float:right;
+	margin-left:10px;
+	clear:right;
+}
+
+#show_description_container {
+	clear:both;
+}
+
+#show_description_container p {
+	color:black;
 }

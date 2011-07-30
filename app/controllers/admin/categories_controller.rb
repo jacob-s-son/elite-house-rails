@@ -1,5 +1,5 @@
 class Admin::CategoriesController < Admin::BaseController
-  before_filter :load_category , :only => [:edit, :update]
+  before_filter :load_category , :only => [:edit, :update, :destroy]
   
   def index
     @categories = Category.find(:all, :order => "priority DESC")
@@ -27,6 +27,11 @@ class Admin::CategoriesController < Admin::BaseController
     else
       render :new
     end
+  end
+  
+  def destroy
+    @category.destroy
+    redirect_to admin_categories_path
   end
   
   private

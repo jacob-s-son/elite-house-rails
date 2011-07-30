@@ -1,5 +1,5 @@
 class Admin::SubCategoriesController < Admin::BaseController
-  before_filter :load_sub_category , :only => [:edit, :update]
+  before_filter :load_sub_category , :only => [:edit, :update, :destroy]
   
   def index
     @sub_categories = SubCategory.find(:all, :order => "priority DESC")
@@ -29,6 +29,11 @@ class Admin::SubCategoriesController < Admin::BaseController
     else
       render :new
     end
+  end
+  
+  def destroy
+    @sub_category.destroy
+    redirect_to admin_sub_categories_path
   end
   
   private

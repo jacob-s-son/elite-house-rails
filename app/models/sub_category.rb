@@ -1,5 +1,5 @@
 class SubCategory < ActiveRecord::Base
-  has_many :furniture
+  has_many :furniture, :dependent => :destroy
   belongs_to :category
   after_initialize :set_pritority
   validates_presence_of :category

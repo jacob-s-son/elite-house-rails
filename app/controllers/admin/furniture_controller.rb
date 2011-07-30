@@ -1,5 +1,5 @@
 class Admin::FurnitureController < Admin::BaseController
-  before_filter :load_furniture , :only => [:edit, :update]
+  before_filter :load_furniture , :only => [:edit, :update, :destroy]
 
   def index
     @furniture = Furniture.find(:all, :order => "priority DESC")
@@ -7,9 +7,12 @@ class Admin::FurnitureController < Admin::BaseController
 
   def new
     @furniture = Furniture.new
+    3.times { @furniture.images.build }
   end
 
   def edit
+    number = 3 - @furniture.images.size
+    number.times { @furniture.images.build }
     render :new
   end
 
@@ -29,6 +32,11 @@ class Admin::FurnitureController < Admin::BaseController
     else
       render :new
     end
+  end
+  
+  def destroy
+    @furniture.destroy
+    redirect_to admin_furniture_index_path
   end
 
   private

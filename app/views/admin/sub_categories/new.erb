@@ -5,8 +5,5 @@
 	<%=	f.input :description_ru, :as => :text, :input_html => {:columns => 6, :rows => 4} %>
 	<%=	f.input :priority %>
 	<%= f.association :category, :collection => Category.all(:order => 'name')%>
-	<div class="input file optional">
-	  <%= f.file_field :image %>
-	</div>
 	<%=	f.button :submit, :value => "Saglabāt" %>
 <% end %>

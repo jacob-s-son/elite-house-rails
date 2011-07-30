@@ -25,3 +25,9 @@ table.admin_table th,td{
 	border-width:2px;
 	
 }
+
+div#image_container {
+	clear:right;
+	margin-top:20px;
+	margin-bottom:20px;
+}

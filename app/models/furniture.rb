@@ -4,11 +4,9 @@ class Furniture < ActiveRecord::Base
   validates_presence_of :category
   #validates_presence_of :sub_category, :if => lambda { |f| self.category.sub_categories.size > 0 }
   after_initialize :set_priority
+  has_many :images, :dependent => :destroy
+  accepts_nested_attributes_for :images, :reject_if => lambda { |t| t['picture'].nil? }, :allow_destroy => true  
   
-  has_attached_file :image, 
-                    :styles => { :large => "500x500>",
-                                 :medium => "300x300>",
-                                 :thumb => "100x100>" }
   def name
    read_attribute( I18n.locale == :lv ? :name : :name_ru ) 
   end
@@ -23,6 +21,10 @@ class Furniture < ActiveRecord::Base
     else
       self.where(:category_id => params[:category_id])
     end
+  end
+  
+  def main_image
+    images.main.first.picture
   end
   
   private

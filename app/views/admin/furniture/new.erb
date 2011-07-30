@@ -1,4 +1,4 @@
-<%= simple_form_for [:admin, @furniture], :url => admin_furniture_index_path, :html => { :multipart => true } do |f| %>
+<%= simple_form_for [:admin, @furniture], :url => furniture_form_url, :html => { :multipart => true } do |f| %>
 	<%=	f.input :name %>
 	<%=	f.input :name_ru %>
 	<%=	f.input :description_lv, :as => :text, :input_html => {:columns => 6, :rows => 4} %>
@@ -6,8 +6,19 @@
 	<%=	f.input :priority %>
 	<%= f.association :category, :collection => Category.all(:order => 'name')%>
 	<%= f.association :sub_category, :collection => SubCategory.all(:order => 'name')%>
-	<div class="input file optional">
-	  <%= f.file_field :image %>
-	</div>
+	
+	<%= f.simple_fields_for :images do |builder| %>
+	    <% unless builder.object.id.nil? %>
+	      <div id="image_container_<%= builder.object.id %>">
+          <%= image_tag builder.object.url(:medium) %>
+          <%= builder.hidden_field :_destroy %>  
+          <%= link_to "remove", "javascript:remove_fields(#{builder.object.id})", :class => "admin", :id => builder.object.id %>
+        </div>
+      <% else %>
+        <%= builder.file_field :picture %>
+        <%= builder.input :main %>
+      <% end %>
+  <% end %>
+  
 	<%=	f.button :submit, :value => "Saglabāt" %>
 <% end %>

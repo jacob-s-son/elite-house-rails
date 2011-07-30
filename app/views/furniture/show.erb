@@ -1,2 +1,13 @@
-<%= image_tag @furniture.image.url(:large) %>
-<p><%= @furniture.description %></p>
+<div id="show_left_column">
+  <%= image_tag @furniture.main_image.url(:large), :id => "furniture_first_image" %>
+</div>
+<div id="show_right_column">
+  <% @furniture.images.each do |i| %>
+    <div class="thumb_image">
+      <%= link_to image_tag (i.url(:thumb), :border =>0) , "javascript:swap_furniture_image('#{i.url(:large)}')" %>
+    </div>
+  <% end %>
+</div>
+<div id="show_description_container">
+  <p><%= @furniture.description %></p>
+</div>

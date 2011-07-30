@@ -1,6 +1,6 @@
 class Category < ActiveRecord::Base
-  has_many :sub_categories
-  has_many :furniture
+  has_many :sub_categories, :dependent => :destroy
+  has_many :furniture, :dependent => :destroy
   after_initialize :set_pritority
   
   def name

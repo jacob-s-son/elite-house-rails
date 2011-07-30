@@ -4,7 +4,7 @@
       <th>Sub Category Name</th>
       <th>Sub Category Priority</th>
       <th>Category</th>
-      <th>Image</th>
+      <th>&nbsp;</th>
     </tr>
     
     <%  @sub_categories.each do |c| %>
@@ -19,7 +19,7 @@
           <%= c.category.name %>
         </td>
         <td>
-          <%= image_tag c.image.url(:thumb) if c.image_file_name %>
+          <%= link_to "Delete", { :controller => "admin/sub_categories", :action => "destroy", :id => c.id }, :class => "admin", :method => :delete, :confirm => "Are you sure?" %>
         </td>
       </tr>
     <% end %>

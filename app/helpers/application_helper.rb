@@ -41,4 +41,8 @@ module ApplicationHelper
   def sliced_furniture_array(nr)
     @furniture.slice(nr*@furniture_per_row, @furniture_per_row)
   end
+  
+  def furniture_form_url
+    @furniture.new_record? ? admin_furniture_index_path : admin_furniture_path
+  end
 end
