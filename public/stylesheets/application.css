@@ -51,6 +51,7 @@ ul#main_menu {
 	float:left;
 	text-align:right;
 	list-style-type:none;
+	font-family:BellMTItalic !important;
 }
 
 ul#sub_menu > li {
@@ -82,24 +83,24 @@ img#logo {
 
 
 a {
-	font-family: arial, verdana, sans-serif;
-	font-size: 11px;
+/*	font-family: arial, verdana, sans-serif;*/
+	font-size: 13px;
 	font-weight: normal;
 	text-decoration: none;
-	color: white;
+	color: #FFFF66;
 }
 
 a:active {
-	font-family: arial, verdana, sans-serif;
-	font-size: 11px;
+/*	font-family: arial, verdana, sans-serif;*/
+	font-size: 13px;
 	font-weight: normal;
 	text-decoration: none;
-	color: #596073;
+	color: #FFFF66;
 }
 
 a:hover {
-	font-family: arial, verdana, sans-serif;
-	font-size: 11px;
+/*	font-family: arial, verdana, sans-serif;*/
+	font-size: 13px;
 	font-weight: normal;
 	text-decoration: none;
 	color: #bfc2c9;
