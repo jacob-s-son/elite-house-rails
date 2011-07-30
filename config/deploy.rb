@@ -58,8 +58,6 @@ namespace :deploy do
   end
 end
 
-after 'deploy:update_code', 'deploy:symlink_shared'
-
 namespace(:customs) do
   task :config, :roles => :app do
     run <<-CMD
@@ -67,5 +65,7 @@ namespace(:customs) do
     CMD
   end
 end
+
+after 'deploy:update_code', 'deploy:symlink_shared', 'customs:config'
 
 
