@@ -51,7 +51,8 @@ ul#main_menu {
 	float:left;
 	text-align:right;
 	list-style-type:none;
-	font-family:BellMTItalic !important;
+	font-family:"Times New Roman",Times,serif; 
+	font-style:italic;
 }
 
 ul#sub_menu > li {
@@ -64,7 +65,7 @@ div#separator_container {
 }
 
 img.separator {
-	width:45px;
+	width:74px;
 	height:500px;
 }
 
@@ -117,7 +118,7 @@ li.category > a {
 }
 
 a.selected {
-	font-weight:bolder;
+	font-weight:900;
 }
 
 p {

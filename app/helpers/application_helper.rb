@@ -7,6 +7,24 @@ module ApplicationHelper
     end
   end
   
+  def home_page
+    {
+      :name => (I18n.locale == :lv ? "Sākumlapa" : "Главная"),
+      :key => "home_page",
+      :url => categories_path,
+      :options => { :container_id => 'main_menu', :class => "category", :highlights_on => /^.*\/(lv|ru)?(\/categories)$/}
+    }
+  end
+  
+  def contacts
+    {
+      :name => (I18n.locale == :lv ? "Kontakti" : "Контакты"),
+      :key => "contacts",
+      :url => contacts_categories_path,
+      :options => { :container_id => 'main_menu', :class => "category" }
+    }
+  end
+  
   def sub_menu_items(category)
     category.sub_categories.map do |sc|
       {
@@ -19,7 +37,7 @@ module ApplicationHelper
   end
   
   def menu_items
-    Category.all.map do |category|
+    items = Category.all.map do |category|
       {
         :name => category.name,
         :key => "main_#{category.id}".to_sym,
@@ -28,6 +46,9 @@ module ApplicationHelper
         :items => sub_menu_items(category)
       }
     end
+    
+    items.insert(0, home_page)
+    items.insert(-1, contacts)
   end
   
   def furniture_url(f)

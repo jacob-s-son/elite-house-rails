@@ -1,6 +1,7 @@
 EliteHouse::Application.routes.draw do
  scope '(:locale)', :locale => /lv|ru/ do
    resources :categories, :only => [ :index ] do
+     get 'contacts', :on => :collection
      resources :sub_categories, :only => [ :index ]
    end
    
@@ -17,6 +18,7 @@ EliteHouse::Application.routes.draw do
      match '/' => "base#admin_actions"
    end
    
+   match '/:locale' => 'categories#index'
    root :to => 'categories#index'
  end
 end
