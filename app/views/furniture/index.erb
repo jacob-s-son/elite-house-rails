@@ -22,7 +22,7 @@
 			</tr>
 		<% end %>
 	</table>
-<% elsif @category.name.match(/Viesistaba|Гостинная/) %>
+<% elsif @category && @category.name.match(/Viesistaba|Гостинная/) %>
   <div id="frame_container">
 		<iframe src="http://www.mebin.pl/mebin.swf" width="95%" height="95%">
 		  <p>Your browser does not support iframes.</p>
