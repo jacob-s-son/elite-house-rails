@@ -10,7 +10,7 @@
 <% unless @furniture.empty? %>
 	<table id="furniture_table">
 		<% @furniture_per_row = 3 %>
-		<% (0..last_furniture_row).each do |nr| %>
+		<% (1..last_furniture_row).each do |nr| %>
 			<tr>
 				<% sliced_furniture_array(nr).each do |f| %>
 					<td>

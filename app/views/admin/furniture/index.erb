@@ -21,7 +21,7 @@
           <%= c.category.name %>
         </td>
 				<td>
-          <%= c.sub_category.name %>
+          <%= c.sub_category.name if c.sub_category %>
         </td>
         <td>
           <%= image_tag c.main_image.url(:thumb) unless c.images.empty? %>

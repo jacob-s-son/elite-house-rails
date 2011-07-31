@@ -39,6 +39,7 @@ module ApplicationHelper
   end
   
   def sliced_furniture_array(nr)
+    nr -= 1
     @furniture.slice(nr*@furniture_per_row, @furniture_per_row)
   end
   

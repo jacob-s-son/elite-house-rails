@@ -24,7 +24,7 @@ class Furniture < ActiveRecord::Base
   end
   
   def main_image
-    images.main.first.picture
+    images.main.first || images.first
   end
   
   private
