@@ -12,7 +12,7 @@ module ApplicationHelper
       :name => (I18n.locale == :lv ? "Sākumlapa" : "Главная"),
       :key => "home_page",
       :url => categories_path,
-      :options => { :container_id => 'main_menu', :class => "category", :highlights_on => /^.*\/(lv|ru)?(\/categories)$/}
+      :options => { :container_id => 'main_menu', :class => "category", :highlights_on => /^.*\/(lv|ru)?(\/categories)?$/}
     }
   end
   
@@ -56,7 +56,7 @@ module ApplicationHelper
   end
   
   def last_furniture_row
-    ( @furniture.size.to_f / @furniture_per_row.to_f ).round.to_i 
+    ( @furniture.size.to_f / @furniture_per_row.to_f + 0.5 ).round.to_i 
   end
   
   def sliced_furniture_array(nr)

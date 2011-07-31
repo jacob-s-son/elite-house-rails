@@ -115,10 +115,11 @@ li.category {
 
 li.category > a {
 	font-size:18px;
+	font-weight:900;
 }
 
 a.selected {
-	font-weight:900;
+	color:#FFFF00;
 }
 
 p {
