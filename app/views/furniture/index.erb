@@ -14,7 +14,7 @@
 			<tr>
 				<% sliced_furniture_array(nr).each do |f| %>
 					<td>
-					  <%= link_to image_tag (f.main_image.url(:medium), :border =>0) , category_furniture_path(:id => f, :category_id => f.category), :rel =>"facebox" %>
+					  <%= link_to image_tag (f.main_image.url(:thumb), :border =>0) , category_furniture_path(:id => f, :category_id => f.category), :rel =>"facebox" %>
 					  <br />
 						<h3><%= f.name %></h3>
 					</td>

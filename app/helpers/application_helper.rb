@@ -24,7 +24,7 @@ module ApplicationHelper
         :name => category.name,
         :key => "main_#{category.id}".to_sym,
         :url => url_for_category(category),
-        :options => { :container_id => 'main_menu' },
+        :options => { :container_id => 'main_menu', :class => "category" },
         :items => sub_menu_items(category)
       }
     end
