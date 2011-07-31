@@ -7,7 +7,7 @@
     });
   </script>
 
-<% unless @furniture.empty? %>
+<% if @furniture.size > 0 %>
 	<table id="furniture_table">
 		<% @furniture_per_row = 3 %>
 		<% (1..last_furniture_row).each do |nr| %>
@@ -22,6 +22,15 @@
 			</tr>
 		<% end %>
 	</table>
+<% elsif @category.name.match(/Viesistaba|Гостинная/) %>
+  <div id="frame_container">
+		<iframe src="http://www.mebin.pl/mebin.swf" width="95%" height="95%">
+		  <p>Your browser does not support iframes.</p>
+		</iframe>
+	</div>
 <% else %>
-	
+  <div id="under_construction_content">
+		<img id="under_construction_image" src="http://sickofhealthdisparities.files.wordpress.com/2009/08/under_construction1.gif">
+		<p> <%= under_construction_msg %> </p>
+	</div>
 <% end %>

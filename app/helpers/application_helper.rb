@@ -67,4 +67,8 @@ module ApplicationHelper
   def furniture_form_url
     @furniture.new_record? ? admin_furniture_index_path : admin_furniture_path
   end
+  
+  def under_construction_msg
+    (I18n.locale == :lv ? "Lapa tiek papildināta" : "Раздел дополняется")
+  end
 end

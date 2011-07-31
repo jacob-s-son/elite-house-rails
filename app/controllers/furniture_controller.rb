@@ -3,6 +3,8 @@ class FurnitureController < ApplicationController
   
   def index
     @furniture = Furniture.find_for_index(params)
+    @category = Category.find(params[:category_id])
+    @sub_category = SubCategory.find(params[:sub_category_id]) if params[:sub_category_id]
   end
   
   def show
