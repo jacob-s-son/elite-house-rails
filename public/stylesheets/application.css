@@ -27,6 +27,10 @@ div#header_logo_container{
 	float:left;
 }
 
+div#gallery_container {
+	float:left;
+}
+
 div#language_select_container{
 	float:left;
 }

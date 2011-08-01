@@ -15,6 +15,7 @@
 			<%= image_tag "logo3.png", :id => "header_logo" %>
 		</div>
 		<div id="gallery_container">
+		  <%= image_tag Furniture.first.main_image.url(:medium), :id => "gallery_img" %>
 		</div>
 		<div id="language_select_container">
 			<select id="language_select" onchange="select_locale('<%= current_url %>')">
@@ -37,6 +38,9 @@
 		<div id="page_content">
 		  <%= yield %>
 		</div>
+		<script type="text/javascript">
+		  gallery(<%= args_for_gallery %>);
+		</script
 	</div>
 </body>
 </html>

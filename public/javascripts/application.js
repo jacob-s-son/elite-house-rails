@@ -29,3 +29,17 @@ function select_locale(url) {
 	val = $("#language_select").val();
 	window.location = url.replace(/lv|ru/, val);
 }
+
+function gallery() {
+	number_of_images = arguments.length;
+	images = arguments;
+	i = 0;
+	
+	setInterval( function() {
+		i = ( i < (number_of_images - 1) ) ? i+1 : 0;
+		console.log(i);
+		console.log(number_of_images);
+		console.log(arguments[i]);
+		Transitions.bars("#gallery_img", images[i], "Furniture", "2", "4SCVE", "75%", "Yes");
+	}, 7000)
+}

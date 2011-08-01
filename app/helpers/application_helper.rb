@@ -75,4 +75,10 @@ module ApplicationHelper
   def current_url
     request.url
   end
+  
+  def args_for_gallery
+    Furniture.all.map do |f| 
+      "'#{f.main_image.url(:medium)}'"
+    end.join(" , ")
+  end
 end
