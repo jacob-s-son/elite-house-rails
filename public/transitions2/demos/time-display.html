@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+
+	<title>Image Transitions 2.0 &#x2014; Time-Display Demo</title>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<!-- general demo stylesheet and core transitions codebase (development version) -->
+	<link rel="stylesheet" type="text/css" href="demos.css" media="screen,projection" />
+	<script type="text/javascript" src="../transitions.debug.js"></script>
+	
+	<!-- stylesheet for this demo -->
+	<link rel="stylesheet" type="text/css" href="time-display.css" media="screen,projection" />
+
+</head>
+<body>
+
+	<h1>Time-Display Demo</h1>
+	
+	<p>
+		This example is an animated clock with six dynamic digits, each of which 
+		goes through a transition effect when its number changes.
+	</p>
+	
+	<p class="demo clock" id="clock">
+		<span class="frame">
+			<img class="number" src="images/time-display/0.png" alt="0" />
+			<img class="number" src="images/time-display/0.png" alt="0" />
+			<img class="separator" src="images/time-display/colon.png" alt=":" />
+			<img class="number" src="images/time-display/0.png" alt="0" />
+			<img class="number" src="images/time-display/0.png" alt="0" />
+			<img class="separator" src="images/time-display/dot.png" alt="." />
+			<img class="number" src="images/time-display/0.png" alt="0" />
+			<img class="number" src="images/time-display/0.png" alt="0" />
+		</span>
+	</p>
+	
+	<p>
+		The effect used in the <a href="time-display.js">demo script</a> is a 
+		reverse <code>"<abbr title="Center to Corners">CC</abbr>"</code> <code>grow</code> 
+		transition with 50% added fade, but many of the available transitions would 
+		create an interesting effect for this.
+	</p>
+
+		
+
+
+	
+	
+	<p class="attribution">
+		&#x21e5; Powered by  
+		<a href="http://www.brothercake.com/site/resources/scripts/transitions/">
+			<cite>Image Transitions 2.0</cite></a>
+	</p>
+
+
+	<!-- scripting for this demo -->
+	<script type="text/javascript" src="time-display.js"></script>
+	
+</body>
+</html>

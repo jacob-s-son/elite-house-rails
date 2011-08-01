@@ -1,0 +1,46 @@
+
+
+/* time-display demo */
+.clock
+{
+	width:244px;
+	height:51px;
+	padding:7px;
+	
+	background:#202020;
+
+}
+.clock .frame
+{
+	display:block;
+	width:232px;
+	height:49px;
+	padding:0 5px;
+
+	border:1px solid;
+	border-color:#505050 #393939 #303030 #484848;
+	
+	background:#000;
+	
+	border-radius:3px;
+}
+
+.clock img
+{
+	float:left;
+	width:15px; 
+	height:20px;
+	width:31px;
+	height:49px;
+	
+	color:#30f;
+	font-size:2em;
+	font-weight:bold;
+}
+.clock img.separator
+{
+	width:23px;
+}
+
+
+

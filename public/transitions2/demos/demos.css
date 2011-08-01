@@ -1,0 +1,118 @@
+
+
+/* canvas and resets */
+*
+{
+	margin:0;
+	padding:0;
+	list-style-type:none;
+}
+
+html, body
+{
+	min-width:516px;
+
+	font:normal normal normal 1em/1.6 "lucida grande",sans-serif;
+	background:#fff;
+	color:#444;
+}
+body
+{
+	position:relative;
+	left:-258px;
+	margin:0 -258px 0 50%;
+	padding:14px 18px;
+	width:516px;
+
+	font-size:100%;
+}
+
+
+/* general text */
+h1
+{
+	margin-bottom:0.25em;
+	
+	font-size:1.88em;
+	letter-spacing:-1px;
+	font-weight:normal;
+}
+
+p, label, ul, dl
+{
+	clear:both;
+	margin-bottom:10px;
+	
+	font-size:0.88em;
+}
+
+code
+{
+	font-family:monaco,"courier new",monospace;
+}
+
+
+/* attribution credit */
+p.attribution
+{
+	clear:both;
+	padding:50px 0 0 29px;
+	
+	font-size:0.78em;
+	color:#777;
+}
+p.attribution cite
+{
+	font:italic normal bold 1.05em georgia,serif;
+}
+p.attribution a, p.attribution a:visited
+{
+	color:#777;
+	text-decoration:none;
+}
+p.attribution a:hover, p.attribution a:focus
+{
+	text-decoration:underline;
+}
+
+
+/* generic demo image */
+.demo
+{
+	display:block;
+	float:left;
+	padding:5px;
+	line-height:1;
+	margin:20px 20px 30px 25px; 
+	
+	border:1px solid #ccc;
+	
+	background:#fff;
+
+	-moz-box-shadow:0 1px 3px rgba(0,0,0,0.6);
+	-webkit-box-shadow:0 1px 3px rgba(0,0,0,0.6);
+	box-shadow:0 1px 3px rgba(0,0,0,0.6);
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+}
+.demo, .demo *
+{
+	width:250px;
+	height:150px;
+}
+.demo img
+{
+	display:block;
+	line-height:1.25;
+	
+	border:none;
+
+	font-size:0.88em;
+}
+
+
+
+
+
+

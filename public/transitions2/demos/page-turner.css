@@ -1,0 +1,29 @@
+
+
+/* page-turner demo */
+.book-frame
+{
+	width:306px;
+	height:203px;
+	margin:20px 20px 20px 20px; 
+	
+	background:url("images/page-turner/book-frame.jpg") no-repeat;
+}
+
+.book-frame a, .book-frame a:visited
+{
+	display:block;
+	float:left;
+	margin:5px -3px 0 4px;
+	
+	font-size:0.88em;
+}
+.book-frame a, .book-frame a img
+{
+	width:147px;
+	height:189px;
+	
+	border:none;
+}
+
+

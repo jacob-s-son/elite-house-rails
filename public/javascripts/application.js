@@ -24,3 +24,8 @@ function remove_fields(link) {
 		$("#image_container_" + link ).hide();
 	}
 }
+
+function select_locale(url) {
+	val = $("#language_select").val();
+	window.location = url.replace(/lv|ru/, val);
+}

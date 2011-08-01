@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+
+	<title>Image Transitions 2.0 &#x2014; Basic Transition Demo</title>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<!-- general demo stylesheet and core transitions codebase (development version) -->
+	<link rel="stylesheet" type="text/css" href="demos.css" media="screen,projection" />
+	<script type="text/javascript" src="../transitions.debug.js"></script>
+
+</head>
+<body>
+
+	<h1>Basic Transition Demo</h1>
+	
+	<p>
+		This basic example runs a random <code>skew</code> transition 
+		on the image below, when you click its surrounding link. 
+	</p>
+	
+	<p class="demo">
+		<a id="trigger"><img id="image" src="images/basic/england.png" alt="Flag of England." /></a>
+	</p>
+
+	<p>
+		The link has a <code>javascript:</code> <code>href</code> 
+		which calls the transition method, but the <code>href</code> itself 
+		is also set by the <a href="basic.js">demo script</a>. So when 
+		scripting is not available, it won't appear to be a link at all, just a static image.
+	</p>
+
+
+
+
+	<p class="attribution">
+		&#x21e5; Powered by  
+		<a href="http://www.brothercake.com/site/resources/scripts/transitions/">
+			<cite>Image Transitions 2.0</cite></a>
+	</p>
+
+
+	<!-- scripting for this demo -->
+	<script type="text/javascript" src="basic.js"></script>
+	
+</body>
+</html>

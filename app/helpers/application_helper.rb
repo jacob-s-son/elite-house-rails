@@ -71,4 +71,8 @@ module ApplicationHelper
   def under_construction_msg
     (I18n.locale == :lv ? "Lapa tiek papildināta" : "Раздел дополняется")
   end
+  
+  def current_url
+    request.url
+  end
 end

@@ -9,12 +9,18 @@
 <body>
 	<%= image_tag "bg.jpg", :id => "bg" %>
 	<!-- <img src="images/bg.jpg" alt="background image" id="bg" /> -->
-	<div id="header" class="<%= "hidden" if controller.class == CategoriesController %>">
-		<div id="header_logo">
+	<!-- <div id="header" class="<%= "hidden" if controller.class == CategoriesController %>"> -->
+	<div id="header">
+		<div id="header_logo_container">
+			<%= image_tag "logo3.png", :id => "header_logo" %>
 		</div>
 		<div id="gallery_container">
 		</div>
 		<div id="language_select_container">
+			<select id="language_select" onchange="select_locale('<%= current_url %>')">
+				<option value="lv">LV</option>
+			  <option value="ru">RU</option>
+			</select>
 		</div>
 	</div>
 	<div id="content">

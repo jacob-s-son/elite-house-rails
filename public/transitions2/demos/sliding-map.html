@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+
+	<title>Image Transitions 2.0 &#x2014; Sliding-Map Demo</title>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<!-- general demo stylesheet and core transitions codebase (development version) -->
+	<link rel="stylesheet" type="text/css" href="demos.css" media="screen,projection" />
+	<script type="text/javascript" src="../transitions.debug.js"></script>
+	
+	<!-- stylesheet for this demo -->
+	<link rel="stylesheet" type="text/css" href="sliding-map.css" media="screen,projection" />
+
+</head>
+<body>
+
+	<h1>Sliding-Map Demo</h1>
+	
+	<p>
+		This neat example shows how a transition can be used with a set of image slices, 
+		to create the effect of panning around a single, large image.
+	</p>
+
+	<p class="demo map" id="map">
+		<img id="fragment" src="images/sliding-map/middle-center.jpg" alt="Map of Australia, focused on South Australia." />
+	</p>
+	
+	<p>
+		The <a href="sliding-map.js">demo scripting</a> could be extended as far as it 
+		needs to go, with any number of slices making-up the larger image. You'd probably
+		also want to make the interface a little friendlier, such as telling users 
+		when they've reached the edge of the map!
+	</p>
+
+
+
+
+	<p class="attribution">
+		&#x21e5; Powered by  
+		<a href="http://www.brothercake.com/site/resources/scripts/transitions/">
+			<cite>Image Transitions 2.0</cite></a>
+	</p>
+
+
+	<!-- scripting for this demo -->
+	<script type="text/javascript" src="sliding-map.js"></script>
+	
+</body>
+</html>
