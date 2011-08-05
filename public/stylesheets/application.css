@@ -78,7 +78,7 @@ div#logo_container {
 }
 
 ul#main_menu {
-	margin-top:112%;
+/*	margin-top:112%;*/
 	float:left;
 	text-align:right;
 	list-style-type:none;
