@@ -29,6 +29,11 @@ div#header_logo_container{
 
 div#gallery_container {
 	float:left;
+	margin-left:50%;
+	border-width:2px;
+	border-style:solid;
+	border-color:#2A0E53;
+	background:#2A0E53;
 }
 
 div#language_select_container{

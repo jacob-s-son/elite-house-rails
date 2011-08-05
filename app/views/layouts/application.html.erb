@@ -11,17 +11,17 @@
 	<!-- <img src="images/bg.jpg" alt="background image" id="bg" /> -->
 	<!-- <div id="header" class="<%= "hidden" if controller.class == CategoriesController %>"> -->
 	<div id="header">
-		<div id="header_logo_container">
-			<%= image_tag "logo3.png", :id => "header_logo" %>
-		</div>
-		<div id="gallery_container">
-		  <%= image_tag Furniture.first.main_image.url(:medium), :id => "gallery_img" %>
-		</div>
 		<div id="language_select_container">
 			<select id="language_select" onchange="select_locale('<%= current_url %>')">
 				<option value="lv">LV</option>
 			  <option value="ru">RU</option>
 			</select>
+		</div>
+		<div id="header_logo_container">
+			<%= image_tag "elite_house_logo.png", :id => "header_logo" %>
+		</div>
+		<div id="gallery_container">
+		  <%= image_tag Furniture.first.main_image.url(:medium), :id => "gallery_img" %>
 		</div>
 	</div>
 	<div id="content">
