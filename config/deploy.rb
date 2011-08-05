@@ -1,7 +1,7 @@
 # RVM bootstrap
 $:.unshift(File.expand_path("~/.rvm/lib"))
 require 'rvm/capistrano'
-set :rvm_ruby_string, '1.8.7'
+set :rvm_ruby_string, '1.8.7@elite-house'
 set :rvm_type, :user
 
 # stages
