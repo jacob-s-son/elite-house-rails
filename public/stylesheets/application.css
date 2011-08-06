@@ -15,6 +15,10 @@ img#bg {
 	z-index:-1;
 }
 
+div#hidden {
+	display:none !important;
+}
+
 
 div#header {
 	z-index:1;
@@ -33,10 +37,11 @@ div#gallery_container {
 	float:right;
 	margin-top:80px;
 	margin-right:30px;
-	border-width:2px;
+/*	border-width:2px;
 	border-style:solid;
-	border-color:#2A0E53;
-	background:#2A0E53;
+	border-color:#657688;*/
+	background:url('../images/gallery_border.png') no-repeat center center;
+/*	background:#061729;*/
 	height:300px;
 	width:450px;
 	text-align:center;
@@ -72,6 +77,10 @@ div#content {
 div#left_column{
 	float:left;
 	width:60%;
+}
+
+div.full_width{
+	width:100% !important;
 }
 
 div#right_column{
@@ -245,4 +254,3 @@ h3 {
 #under_construction_content {
 	padding-left:30%;
 }
-

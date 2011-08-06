@@ -10,7 +10,7 @@
 	<%= image_tag "bg.jpg", :id => "bg" %>
 	<!-- <img src="images/bg.jpg" alt="background image" id="bg" /> -->
 	<!-- <div id="header" class="<%= "hidden" if controller.class == CategoriesController %>"> -->
-	<div id="left_column">
+	<div id="left_column" class ="<%= 'full_width' unless controller.class == CategoriesController %>" >
 	  <div id="header">
   		<div id="language_select_container">
   			<select id="language_select" onchange="select_locale('<%= current_url %>')">
@@ -35,16 +35,19 @@
   		<div id="page_content">
   		  <%= yield %>
   		</div>
-  		<script type="text/javascript">
-  		  gallery(<%= args_for_gallery %>);
-  		</script>
   	</div>
   </div>
-  <div id="right_column">
-    <div id="gallery_container">
-		  <%= image_tag "gallery/1.jpg", :id => "gallery_img" %>
-		</div>
+
+  <% if controller.class == CategoriesController %>
+    <div id="right_column">
+      <div id="gallery_container" >
+  		  <%= image_tag "gallery/1.jpg", :id => "gallery_img" %>
+  		  <script type="text/javascript">
+    		  gallery(<%= args_for_gallery %>);
+    		</script>
+  		</div>
+    </div>
+  <% end %>
     <%#= image_tag "elite_house_text_from_right_home_page.png", :id => "right_column_image" %>
-  </div>
 </body>
 </html>

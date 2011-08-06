@@ -78,11 +78,6 @@ module ApplicationHelper
     request.url
   end
   
-  # def args_for_gallery
-  #   Furniture.all.map do |f| 
-  #     "'#{f.main_image.url(:medium)}'"
-  #   end.join(" , ")
-  # end
   def args_for_gallery
     Dir.chdir("#{RAILS_ROOT}/public/images/gallery")
     Dir.glob("*.jpg").map do |f| 
