@@ -32,15 +32,22 @@ div#header_logo_container{
 div#gallery_container {
 	float:right;
 	margin-top:80px;
-	margin-right:10%;
+	margin-right:30px;
 	border-width:2px;
 	border-style:solid;
 	border-color:#2A0E53;
 	background:#2A0E53;
+	height:300px;
+	width:450px;
+	text-align:center;
+	display:block;
+	position:relative;
+/*	position:fixed;*/
 }
 
 img#gallery_img{
-	height:200px;
+	height:250px;
+  margin-top:25px;
 }
 
 div#language_select_container{
@@ -64,6 +71,7 @@ div#content {
 
 div#left_column{
 	float:left;
+	width:70%;
 }
 
 div#right_column{
@@ -138,6 +146,7 @@ img#under_slogan_image {
 	width:450px;
 	height:84px;
 	margin-left:100px;
+	margin-top:50px;
 }
 
 a {
