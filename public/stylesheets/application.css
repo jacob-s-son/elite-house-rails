@@ -19,7 +19,7 @@ img#bg {
 div#header {
 	z-index:1;
 	clear:both;
-	margin-top:5%;
+	margin-top:80px;
 	width:100%;
 	display:inline-block;
 }
@@ -31,6 +31,7 @@ div#header_logo_container{
 
 div#gallery_container {
 	float:right;
+	margin-top:80px;
 	margin-right:10%;
 	border-width:2px;
 	border-style:solid;
