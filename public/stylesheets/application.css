@@ -163,7 +163,7 @@ a {
 	font-size: 14px;
 	font-weight: normal;
 	text-decoration: none;
-	color: #FFFF66;
+	color: #FFCC28;
 }
 
 a:active {
@@ -171,7 +171,7 @@ a:active {
 	font-size: 14px;
 	font-weight: normal;
 	text-decoration: none;
-	color: #FFFF66;
+	color: #FFCC28;
 }
 
 a:hover {
@@ -231,11 +231,13 @@ table#furniture_table {
 	border-width:0px;
 	width:100%;
 	margin-top:10%;
+	border-collapse:collapse;
 }
 
 table#furniture_table td{
-	border-width:1px;
-	border-color:#FFFF66;
+	border-width:0px;
+/*	border-color:#FFCC28;*/
+	background: url("../images/td_background.png") no-repeat center center;
 	height :200px;
 	width :200px;
 }
