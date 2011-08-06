@@ -1,4 +1,6 @@
 module ApplicationHelper
+  # require 'dir'
+  
   def url_for_category(category)
     if category.sub_categories.size > 0
       sub_category_furniture_index_path( :sub_category_id => category.sub_categories.first )
@@ -76,9 +78,16 @@ module ApplicationHelper
     request.url
   end
   
+  # def args_for_gallery
+  #   Furniture.all.map do |f| 
+  #     "'#{f.main_image.url(:medium)}'"
+  #   end.join(" , ")
+  # end
   def args_for_gallery
-    Furniture.all.map do |f| 
-      "'#{f.main_image.url(:medium)}'"
+    Dir.chdir("#{RAILS_ROOT}/public/images/gallery")
+    Dir.glob("*.jpg").map do |f| 
+      f = "gallery/#{f}"
+      "'#{image_path f}'"
     end.join(" , ")
   end
 end

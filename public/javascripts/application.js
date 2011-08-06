@@ -1,18 +1,3 @@
-
-function change_separator(separator_number) {
-	if( separator_number == 1)
-	{
-		$("#separator").addClass("hidden");
-		$("#separator_2").removeClass("hidden");
-	}
-	else
-	{
-		$("#separator").removeClass("hidden");
-		$("#separator_2").addClass("hidden");
-		
-	}
-}
-
 function swap_furniture_image(url) {
 	$('#furniture_first_image').attr("src", url);
 }
@@ -37,9 +22,6 @@ function gallery() {
 	
 	setInterval( function() {
 		i = ( i < (number_of_images - 1) ) ? i+1 : 0;
-		console.log(i);
-		console.log(number_of_images);
-		console.log(arguments[i]);
 		Transitions.bars("#gallery_img", images[i], "Furniture", "2", "4SCVE", "75%", "Yes");
 	}, 7000)
 }

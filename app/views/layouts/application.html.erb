@@ -21,26 +21,30 @@
 			<%= image_tag "elite_house_logo.png", :id => "header_logo" %>
 		</div>
 		<div id="gallery_container">
-		  <%= image_tag Furniture.first.main_image.url(:medium), :id => "gallery_img" %>
+		  <%= image_tag "gallery/1.jpg", :id => "gallery_img" %>
 		</div>
 	</div>
-	<div id="content">
-		<div id="main_menu_container">
-			<div id="menu_container">
-				<%= render_navigation (:items => :menu_items)%>
-			</div>
-			<div id="separator_container">
-				<!-- <img id="separator" src="images/line_separator_big.png"> -->
-				<%= image_tag "separator_line_left.png", :id => "separator", :class => "separator", :onclick => "change_separator(1)" %>
-				<%= image_tag "separator_line_right.png", :id => "separator_2", :class => "separator hidden", :onclick => "change_separator(2)" %>
-			</div>
-		</div>
-		<div id="page_content">
-		  <%= yield %>
-		</div>
-		<script type="text/javascript">
-		  gallery(<%= args_for_gallery %>);
-		</script
-	</div>
+	<div id="left_column">
+  	<div id="content">
+  		<div id="main_menu_container">
+  			<div id="menu_container">
+  				<%= render_navigation (:items => :menu_items)%>
+  			</div>
+  			<div id="separator_container">
+  				<!-- <img id="separator" src="images/line_separator_big.png"> -->
+  				<%= image_tag "separator_line_left.png", :id => "separator", :class => "separator" %>
+  			</div>
+  		</div>
+  		<div id="page_content">
+  		  <%= yield %>
+  		</div>
+  		<script type="text/javascript">
+  		  gallery(<%= args_for_gallery %>);
+  		</script>
+  	</div>
+  </div>
+  <div id="right_column">
+    <%#= image_tag "elite_house_text_from_right_home_page.png", :id => "right_column_image" %>
+  </div>
 </body>
 </html>
