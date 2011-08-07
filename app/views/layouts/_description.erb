@@ -4,6 +4,6 @@
   <% elsif @category %>
     <%= @category.description.to_s.html_safe %>
   <% else %>
-    <%= Category.find_by_name("Aksesuāri").description.to_s.html_safe %>
+    <%= SubCategory.find_by_name("Klasiskais stils").description.to_s.html_safe %>
   <% end %>
 </p>
