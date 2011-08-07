@@ -12,6 +12,10 @@ class SubCategory < ActiveRecord::Base
     read_attribute( I18n.locale == :lv ? :name : :name_ru ) 
   end
   
+  def description
+    read_attribute( I18n.locale == :lv ? :description : :description_ru ) 
+  end
+  
   def key
     self.id
   end

@@ -7,6 +7,10 @@ class Category < ActiveRecord::Base
     read_attribute( I18n.locale == :lv ? :name : :name_ru ) 
   end
   
+  def description
+    read_attribute( I18n.locale == :lv ? :description : :description_ru ) 
+  end
+  
   private
   
   def set_pritority
