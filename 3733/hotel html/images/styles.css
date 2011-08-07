@@ -1,0 +1,139 @@
+/* STANDARD TAG REDEFINITIONS */
+BODY {color : #FDEFD9; font-family : Arial, Helvetica, sans-serif;
+font-size: 12px;
+background-color: Black;
+}
+TD {font-family : Arial, Helvetica, sans-serif;
+font-size: 12px;
+}
+p {font-family : Arial, Helvetica, sans-serif;
+margin-bottom: 10px;
+margin-top: 0;
+font-size: 12px;
+}
+a {
+color: #CB2727;
+font-family: Arial, Helvetica, sans-serif;
+text-decoration: none;
+}
+a:hover {
+text-decoration: underline;
+}
+form.NoMargin {
+margin-left: 0px;
+margin-bottom: 0px;
+margin-right: 0px;
+margin-top: 0px;
+}
+
+/* TOP */
+td.TopNav {
+background-color: #682315;
+border: 1px solid #A1351E;
+}
+.TopNav a {
+color: #FFFBD5;
+font-size: 11px;
+font-family: Arial, Helvetica, sans-serif;
+text-decoration: none;
+font-weight: bold;
+}
+.TopNav a:hover {
+text-decoration: none;
+top: 0px;
+position: relative;
+color: White;
+}
+td.Title {
+background-color: #685B49;
+background-image: url(bg_title.gif);
+background-repeat: repeat-x;
+border: 1px solid #7D6D58;
+color: #FFFBD5;
+font-weight: bold;
+font-size: 11px;
+}
+
+/* LEFT */
+td.Left {
+padding-top: 15px;
+padding-left: 10px;
+padding-right: 15px;
+background-color: #4F4537;
+background-image: url(bg_left.gif);
+background-repeat: repeat-x;
+padding-bottom: 8px;
+}
+td.Left, td.Left p {
+font-size: 11px;
+color: #EEE1B2;
+line-height: 16px;
+}
+.Left a {
+font-size: 11px;
+color: #FFFAE7;
+text-decoration: none;
+}
+.Left a:hover {
+color: White;
+}
+td.LeftSearch {
+background-repeat: repeat-x;
+background-image: url(bg_search.gif);
+}
+input.SearchBox {
+width: 150px;
+height: 19px;
+background-image: url(bg_searchbox.gif);
+background-repeat: repeat-x;
+background-color: #FFFAE7;
+border: 0px none;
+}
+td.LeftCaption {
+font-weight: normal;
+color: #FFFAE7;
+font-family: "MS Sans Serif", Geneva, sans-serif;
+padding-left: 12px;
+border-bottom: 1px solid #FFFAE7;
+}
+
+/* CENTER */
+td.MainText {
+padding-left: 10px;
+padding-top: 15px;
+padding-right: 15px;
+padding-bottom: 15px;
+}
+td.MainText p {
+line-height: 20px;
+}
+td.CenterCaption {
+color: #FFFAE7;
+font-weight: bold;
+padding-right: 10px;
+border-bottom: 1px solid #FFFAE7;
+font-family: "MS Sans Serif", Geneva, sans-serif;
+font-size: 13px;
+}
+
+/* FOOTER */
+td.Footer {
+background-color: #685B49;
+background-image: url(bg_title.gif);
+background-repeat: repeat-x;
+border: 1px solid #7D6D58;
+color: #FFFBD5;
+font-weight: bold;
+font-size: 10px;
+font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+padding-left: 15px;
+padding-right: 15px;
+}
+.Footer a {
+font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 10px;
+font-weight: normal;
+text-decoration: none;
+color: White;
+}
+
