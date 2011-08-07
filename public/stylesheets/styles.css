@@ -215,8 +215,16 @@ ul#main_menu li {
 	margin-left:20px;
 }
 
+ul#main_menu a {
+	font-size:13px;
+}
+
 ul#sub_menu {
 	position:absolute;
+}
+
+ul#sub_menu a {
+	font-size:11px;
 }
 
 ul#sub_menu li {
@@ -331,5 +339,19 @@ table#contacts_table th {
 img#map{
 	width:500px;
 	height:344px;
+}
+
+div#language_select_container {
+	margin-top:40px;
+	position:absolute;
+}
+
+div#language_select_container a {
+	color:#682315;
+}
+
+img#lv_flag, img#ru_flag {
+	width:18px;
+	height:11px;
 }
 
