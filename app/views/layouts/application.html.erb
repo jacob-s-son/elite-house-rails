@@ -1,53 +1,114 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <html>
-<head>
-  <title>EliteHouse</title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :all %>
-  <%= csrf_meta_tag %>
-</head>
-<body>
-	<%= image_tag "bg.jpg", :id => "bg" %>
-	<!-- <img src="images/bg.jpg" alt="background image" id="bg" /> -->
-	<!-- <div id="header" class="<%= "hidden" if controller.class == CategoriesController %>"> -->
-	<div id="left_column" class ="<%= 'full_width' unless controller.class == CategoriesController %>" >
-	  <div id="header">
-  		<div id="language_select_container">
-  			<select id="language_select" onchange="select_locale('<%= current_url %>')">
-  				<option value="lv">LV</option>
-  			  <option value="ru">RU</option>
-  			</select>
-  		</div>
-  		<div id="header_logo_container">
-  			<%= image_tag "elite_house_logo.png", :id => "header_logo" %>
-  		</div>
-  	</div>
-  	<div id="content">
-  		<div id="main_menu_container">
-  			<div id="menu_container">
-  				<%= render_navigation (:items => :menu_items)%>
-  			</div>
-  			<div id="separator_container">
-  				<!-- <img id="separator" src="images/line_separator_big.png"> -->
-  				<%= image_tag "separator_line_left.png", :id => "separator", :class => "separator" %>
-  			</div>
-  		</div>
-  		<div id="page_content">
-  		  <%= yield %>
-  		</div>
-  	</div>
-  </div>
-
-  <% if controller.class == CategoriesController %>
-    <div id="right_column">
-      <div id="gallery_container" >
-  		  <%= image_tag "gallery/1.jpg", :id => "gallery_img" %>
-  		  <script type="text/javascript">
-    		  gallery(<%= args_for_gallery %>);
-    		</script>
-  		</div>
+  <head>
+    <title>
+      Elite-House
+    </title>
+    <%= stylesheet_link_tag :all %>
+    <%= javascript_include_tag :all %>
+    <%= csrf_meta_tag %>
+  </head>
+  <body bgcolor="#000000" text="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+    <div align="center">
+      <table id="header_table">
+        <tr>
+          <td>
+            <%= image_tag "visual.jpg", :id => "logo_img"%>
+          </td>
+        </tr>
+        <tr>
+          <td class="TopNav">
+            <div id="main_menu_container">
+              <%= render_navigation (:items => :menu_items, :expand_all => true)%>
+              <!-- <ul id="main_menu">
+                <li>
+                  <a href="#">RESERVATIONS</a>
+                </li> | 
+                <li>
+                  <a href="#">RESERVATIONS</a>
+                </li> | 
+                <li>
+                  <a href="#">RESERVATIONS</a>
+                </li> | 
+                <li>
+                  <a href="#">RESERVATIONS</a>
+                </li>
+              </ul> -->
+              <script type="text/javascript">
+                $(document).ready(function(){
+                  $("#main_menu_container ul").superfish({
+                    delay:       800,                            // one second delay on mouseout 
+                    animation:   {opacity:'show',height:'show'},  // fade-in and slide-down animation 
+                    speed:       'fast',                          // faster animation speed 
+                    autoArrows:  false,                           // disable generation of arrow mark-up 
+                    dropShadows: false                            // disable drop shadows
+                  });
+                });
+              </script>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= image_tag "spacer.gif", :id => "logo_space_img" %>
+          </td>
+        </tr>
+      </table>
+      <table id="content_table">
+        <tr valign="top">
+          <td>
+            <div id="page">
+              <%= render :partial => "layouts/title_box", :locals => { :img_title => "page_title" } %>
+              <div id="page_content" class="MainText">
+                <%= yield %>
+              </div>
+            </div>
+          </td>
+          <td id="td_spacer">
+            <%= image_tag "spacer.gif", :id => "content_spacer_img" %>
+          </td>
+          <td id="<%= controller.class == CategoriesController ? "right_column" : "right_column_without_gallery" %>">
+            <% if controller.class == CategoriesController %>
+              <div id="gallery_container">
+                <%= image_tag "gallery/1.jpg", :id => "gallery_img" %>
+          		  <script type="text/javascript">
+            		  gallery(<%= args_for_gallery %>);
+            		</script>
+              </div>
+            <% end %>
+            <div id="right_text_container">
+              <%= render :partial => "layouts/title_box", :locals => { :img_title => "description_title" } %>
+              <div id="right_text" class="RightText">
+                <p>
+                  Quapropter ex his forsan non male concludemus Physicam, Astrono miam, Medicinam, disciplinasque alias omnes, quae a rerum compos itarum consideratione dependent, dubias quidem esse; atqui Arithmeticam, Geometriam, aliasque ejusmodi, quae nonnisi de simplicissimis &amp; maxime generalibus rebus tractant, atque utrum eae sint in rerum naturâ necne, parum curant, aliquid certi atque indubitati continere. Nam sive vigilem, sive dormiam, duo &amp; tria simul juncta sunt quinque, quadratumque non plura habet latera quàm quatuor; nec fieri posse videtur ut tam perspicuae veritates in suspicionem falsitatis
+                </p>
+                <p>
+                  &nbsp;
+                </p>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <table width="750" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <%= image_tag "spacer.gif", :id => "logo_space_img" %>
+          </td>
+        </tr>
+        <tr>
+          <td height="24" align="right" class="Footer">
+          </td>
+        </tr>
+        <tr>
+          <td height="20" align="right">
+            &nbsp;
+          </td>
+        </tr>
+      </table>
     </div>
-  <% end %>
-    <%#= image_tag "elite_house_text_from_right_home_page.png", :id => "right_column_image" %>
-</body>
+    <div style="font-size: 0.8em; text-align: center; margin-top: 1.0em; margin-bottom: 1.0em;">
+      Design provided by <a href="http://www.freewebtemplates.com/">Free Web Templates</a> - your source for free website templates
+    </div>
+  </body>
 </html>

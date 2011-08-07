@@ -19,12 +19,18 @@ table.admin_table {
 	border-width:2px;
 }
 
-table.admin_table th,td{
+table.admin_table > th {
 	min-width:150px;
 	border-style:solid;
 	border-width:2px;
-	
 }
+
+table.admin_table > td{
+	min-width:150px;
+	border-style:solid;
+	border-width:2px;
+}
+
 
 div#image_container {
 	clear:right;
