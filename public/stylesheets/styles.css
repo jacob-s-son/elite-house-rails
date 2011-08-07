@@ -126,8 +126,8 @@ color: #FFFBD5;
 font-weight: bold;
 font-size: 10px;
 font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
-padding-left: 15px;
-padding-right: 15px;
+/*padding-left: 15px;
+padding-right: 15px;*/
 }
 .Footer a {
 font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
@@ -140,16 +140,15 @@ color: White;
 /*Additional styling added for customized layout*/
 /*Style that moved from html to CSS*/
 /*body > div:first-child {
-	margin-left:auto;
-	margin-right:auto;
-	width:100%;
-	display:block;
+	width:750px;
 }*/
 
 table#header_table {
 	width:750px; 
 	border-width:0px;
 	border-collapse:collapse;
+	margin:0px;
+	margin-left:-10px;
 }
 
 img#logo_img {
@@ -173,9 +172,11 @@ img#logo_spacer_img {
 }
 
 table#content_table{
-	width:750px; 
-	border-width:0px;
+	width:750px;
 	border-collapse:collapse;
+	border-width:0px;
+	margin:0;
+	
 }
 
 img#title_icon{
@@ -279,7 +280,7 @@ div#gallery_container {
 	background:url('../images/gallery_border.png') no-repeat center center;
 /*	background:#061729;*/
 	height:250px;
-	width:325px;
+	width:300px;
 	text-align:center;
 	display:block;
 	position:relative;
@@ -296,5 +297,25 @@ div#description_title {
 }
 div#right_text {
 	max-width:290px;
+}
+
+div#frame_container {
+/*	align:middle;*/
+	margin:auto;
+/*	padding-left:20px;*/
+	width:750px;
+	height:440px;
+}
+
+table#footer_table {
+	width:756px; 
+	border-collapse:collapse;
+	border-width:0px;
+	margin:0;
+	margin-left:-16px;
+}
+
+div#page_title {
+	width:100%;
 }
 
