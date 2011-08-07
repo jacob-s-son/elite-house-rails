@@ -1,5 +1,6 @@
 <div id="<%= img_title %>" class="Title">
   <div class="wrapper">
-    <%= image_tag "ico_title.gif", :class => "title_icon" %><span>TEXT TITLE</span>
+    <%= image_tag "ico_title.gif", :class => "title_icon" %>
+    <% unless (img_title == "page_title") || ( @category && @category.read_attribute(:name) == "Guļamistabas" ) %><span><%= title %></span><% end %>
   </div>
 </div>

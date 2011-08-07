@@ -85,4 +85,12 @@ module ApplicationHelper
       "'#{image_path f}'"
     end.join(" , ")
   end
+  
+  def title
+    (I18n.locale == :lv ? "Par mums" : "О нас")
+  end
+  
+  def link_to_contacts
+    link_to (I18n.locale == :lv ? "Kontakti" : "Контакты"), contacts_categories_path
+  end
 end

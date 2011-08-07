@@ -355,3 +355,30 @@ img#lv_flag, img#ru_flag {
 	height:11px;
 }
 
+table#furniture_table {
+	border-width:0px;
+	width:100%;
+	margin-top:10%;
+	border-collapse:collapse;
+}
+
+table#furniture_table td{
+	border-width:0px;
+/*	border-color:#FFCC28;*/
+/*	background: url("../images/td_background.png") no-repeat center center;*/
+	height :200px;
+	width :200px;
+	text-align:center;
+}
+
+table#furniture_table tr td img {
+	display:block; 
+	margin: 0 auto;
+}
+
+h3 {
+	font-family: "ff-scala-web-1","ff-scala-web-2","Georgia",serif;
+	color:white;
+	font-style:italic;
+}
+
