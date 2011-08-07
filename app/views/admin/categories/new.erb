@@ -2,6 +2,8 @@
 <%= simple_form_for [:admin, @category] do |f| %>
 	<%=	f.input :name %>
 	<%=	f.input :name_ru %>
+	<%=	f.input :description, :as => :text, :input_html => {:columns => 6, :rows => 4} %>
+	<%=	f.input :description_ru, :as => :text, :input_html => {:columns => 6, :rows => 4} %>
 	<%=	f.input :priority %>
 	<%=	f.button :submit, :value => "Saglabāt" %>
 <% end %>
