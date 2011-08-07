@@ -23,7 +23,7 @@
   	<div id="content">
   		<div id="main_menu_container">
   			<div id="menu_container">
-  				<%= render_navigation (:items => :menu_items)%>
+  				
   			</div>
   			<div id="separator_container">
   				<!-- <img id="separator" src="images/line_separator_big.png"> -->
@@ -39,10 +39,7 @@
   <% if controller.class == CategoriesController %>
     <div id="right_column">
       <div id="gallery_container" >
-  		  <%= image_tag "gallery/1.jpg", :id => "gallery_img" %>
-  		  <script type="text/javascript">
-    		  gallery(<%= args_for_gallery %>);
-    		</script>
+
   		</div>
     </div>
   <% end %>

@@ -67,7 +67,7 @@
           <td id="td_spacer">
             <%= image_tag "spacer.gif", :id => "content_spacer_img" %>
           </td>
-          <% unless @category && @category.read_attribute(:name) == "Viesistaba" %>
+          <% unless ( @category && @category.read_attribute(:name) == "Viesistaba" ) || ( controller.action_name == "contacts" ) %>
             <td id="<%= controller.class == CategoriesController ? "right_column" : "right_column_without_gallery" %>">
               <% if controller.class == CategoriesController %>
                 <div id="gallery_container">

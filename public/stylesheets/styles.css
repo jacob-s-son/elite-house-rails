@@ -319,3 +319,17 @@ div#page_title {
 	width:100%;
 }
 
+table#contacts_table td, th{
+	vertical-align:middle;
+	text-align:left;
+}
+
+table#contacts_table th {
+	font-weight:bold;
+}
+
+img#map{
+	width:500px;
+	height:344px;
+}
+

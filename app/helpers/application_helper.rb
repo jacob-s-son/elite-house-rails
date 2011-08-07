@@ -28,7 +28,7 @@ module ApplicationHelper
   end
   
   def sub_menu_items(category)
-    category.sub_categories.map do |sc|
+    category.sub_categories.sort_by(&:priority).map do |sc|
       {
         :key => sc.key,
         :name => sc.name,
