@@ -1,7 +1,7 @@
 class Admin::BaseController < ApplicationController
   layout 'admin/application'
   USERS = { "admin" => "onl1-el1te-h0use-stuff" }
-  # before_filter :authenticate
+  before_filter :authenticate
   
   def admin_actions
     render "admin_actions"
@@ -9,8 +9,9 @@ class Admin::BaseController < ApplicationController
   
   private
   def authenticate
-    authenticate_or_request_with_http_digest do |username|
-      USERS[username]
+    # debugger
+    authenticate_or_request_with_http_basic do |username, password|
+      username == USERS.keys.first && password == USERS[username]
     end
   end
 end
