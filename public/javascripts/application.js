@@ -11,7 +11,7 @@ function remove_fields(link) {
 }
 
 function select_locale(url, locale) {
-	window.location = url.replace(/\/lv|ru/, "/" + locale);
+	window.location = url.replace(/\/(lv|ru)/, "/" + locale);
 }
 
 function gallery() {
