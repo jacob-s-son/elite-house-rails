@@ -30,7 +30,6 @@ set :use_sudo, false
 set :scm, :git
 set :scm_username, "passenger"
 set :repository, "git@github.com:jacob-s-son/elite-house-rails.git"
-set :branch, "develop"
 set :git_enable_submodules, 1
 
 # rails env
@@ -68,6 +67,6 @@ namespace :deploy do
   end
 end
 
-after 'deploy:update_code', 'deploy:copy_db', 'deploy:symlink_shared'
+after 'deploy:update_code', 'deploy:symlink_shared'
 
 
