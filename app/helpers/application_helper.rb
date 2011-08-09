@@ -48,7 +48,7 @@ module ApplicationHelper
   end
   
   def menu_items
-    items = Category.all.map do |category|
+    items = Category.all.sort_by(&:priority).map do |category|
       {
         :name => category.name,
         :key => "main_#{category.id}".to_sym,
