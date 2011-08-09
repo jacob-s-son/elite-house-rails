@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :set_locale
-  before_filter { |c| c.authenticate if RAILS_ENV == "production_test" }
+  before_filter :authenticate
   
   private
   
@@ -14,8 +14,10 @@ class ApplicationController < ActionController::Base
   end
   
   def authenticate
-    authenticate_or_request_with_http_basic do |username, password|
-      username == USERS.keys.first && password == USERS[username]
+    if if RAILS_ENV == "production_test"
+      authenticate_or_request_with_http_basic do |username, password|
+        username == USERS.keys.first && password == USERS[username]
+      end
     end
   end
 end
