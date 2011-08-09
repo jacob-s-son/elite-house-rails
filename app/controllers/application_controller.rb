@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   end
   
   def authenticate
-    if if RAILS_ENV == "production_test"
+    if RAILS_ENV == "production_test"
       authenticate_or_request_with_http_basic do |username, password|
         username == USERS.keys.first && password == USERS[username]
       end
