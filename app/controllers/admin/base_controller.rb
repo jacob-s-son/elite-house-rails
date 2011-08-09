@@ -1,6 +1,5 @@
 class Admin::BaseController < ApplicationController
   layout 'admin/application'
-  USERS = { "admin" => "onl1-el1te-h0use-stuff" }
   before_filter :authenticate
   
   def admin_actions
