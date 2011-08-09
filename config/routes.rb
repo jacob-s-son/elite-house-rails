@@ -20,6 +20,7 @@ EliteHouse::Application.routes.draw do
    
    match '/:locale' => 'categories#index'
    match '/', :to => redirect('/lv/categories')
+   match '/under_construction', :to => 'categories#under_construction', :via => :get
    root :to => 'categories#index'
  end
 end

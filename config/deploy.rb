@@ -21,7 +21,6 @@ role :db,  "ejekabsons.com", :primary => true
 # server details
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
-set :deploy_to, "/var/www/vhosts/rails/elite-house/"
 set :deploy_via, :remote_cache
 set :user, "passenger"
 set :runner, "passenger"
@@ -61,7 +60,7 @@ end
 namespace(:customs) do
   task :config, :roles => :app do
     run <<-CMD
-      ln -nfs #{shared_path}/system/production_test.sqlite3 #{release_path}/db/production_test.sqlite3
+      ln -nfs #{shared_path}/system/production_test.sqlite3 #{release_path}/db/#{stage}.sqlite3
     CMD
   end
 end
