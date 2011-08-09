@@ -11,7 +11,7 @@ module ApplicationHelper
   
   def home_page
     {
-      :name => (I18n.locale == :lv ? "Sākumlapa" : "Главная"),
+      :name => t(:home_page_name),
       :key => "home_page",
       :url => categories_path,
       :options => { :container_id => 'main_menu', :class => "category", :highlights_on => /^.*\/(lv|ru)?(\/categories)?$/}
@@ -20,9 +20,18 @@ module ApplicationHelper
   
   def contacts
     {
-      :name => (I18n.locale == :lv ? "Kontakti" : "Контакты"),
+      :name => t(:contacts_section_name),
       :key => "contacts",
       :url => contacts_categories_path,
+      :options => { :container_id => 'main_menu', :class => "category" }
+    }
+  end
+  
+  def other_services
+    {
+      :name => t(:building_section_name),
+      :key => "building",
+      :url => building_categories_path,
       :options => { :container_id => 'main_menu', :class => "category" }
     }
   end
@@ -50,6 +59,7 @@ module ApplicationHelper
     end
     
     items.insert(0, home_page)
+    items.insert(-1, other_services)
     items.insert(-1, contacts)
   end
   
@@ -76,6 +86,13 @@ module ApplicationHelper
   
   def current_url
     request.url
+  end
+  
+  def building_images
+    Dir.chdir("#{RAILS_ROOT}/public/images/building")
+    Dir.glob("*.jpg").map do |f| 
+      f = "building/#{f}"
+    end
   end
   
   def args_for_gallery

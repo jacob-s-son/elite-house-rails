@@ -7,7 +7,6 @@ class CategoriesController < ApplicationController
   end
   
   def under_construction
-    debugger
     render :text => "Lapa tiek atjaunota! <br> Сайт дополняется!"
   end
 end

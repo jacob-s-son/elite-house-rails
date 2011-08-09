@@ -13,7 +13,7 @@ require 'capistrano/ext/multistage'
 require 'bundler/capistrano'
 
 # main details
-set :application, "Schenker-WebBooking"
+set :application, "EliteHouse"
 role :web, "ejekabsons.com"
 role :app, "ejekabsons.com"
 role :db,  "ejekabsons.com", :primary => true

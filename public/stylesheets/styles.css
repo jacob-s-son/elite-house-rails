@@ -163,7 +163,7 @@ td.TopNav {
 }
 
 div#main_menu_container{
-	width:90%;
+	width:100%;
 }
 
 img#logo_spacer_img {
@@ -211,7 +211,7 @@ div#right_text {
 /* Customizations */
 ul#main_menu li {
 	display:inline-block;
-	width:80px;
+/*	width:100px;*/
 	margin-left:20px;
 }
 
@@ -342,7 +342,7 @@ img#map{
 }
 
 div#language_select_container {
-	margin-top:40px;
+	margin-top:28px;
 	position:absolute;
 }
 
@@ -382,3 +382,15 @@ h3 {
 	font-style:italic;
 }
 
+img.building_image {
+	width:350px;
+	margin-top:10px;
+}
+
+/*li#home_page {
+	margin-left:0px !important;
+}
+
+li#contacts {
+	padding-left:20px !important;
+}*/

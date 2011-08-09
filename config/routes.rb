@@ -2,6 +2,7 @@ EliteHouse::Application.routes.draw do
  scope '(:locale)', :locale => /lv|ru/ do
    resources :categories, :only => [ :index ] do
      get 'contacts', :on => :collection
+     get 'building', :on => :collection
      resources :sub_categories, :only => [ :index ]
    end
    

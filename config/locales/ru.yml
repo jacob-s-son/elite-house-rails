@@ -1,5 +1,5 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
-en:
-  hello: "Hello world"
+ru:
+  home_page_name: "Начальная"
+  contacts_section_name: "Контакты"
+  building_section_name: "Строительство"
+  building_description: "Еще одна из отраслей фирмы — строительство. На протяжении 3 лет успешно производит работы по строительству и ремонту. Мы рады будем Вам оказать профессиональную помощь в вопросах ремонтно-строительных работ."

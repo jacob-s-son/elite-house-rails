@@ -1,5 +1,9 @@
 # Sample localization file for English. Add more files in this directory for other locales.
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
-en:
-  hello: "Hello world"
+lv:
+  home_page_name: "Sākumlapa"
+  contacts_section_name:  "Kontakti"
+  building_section_name:  "Celtniecība"
+  building_description: "Trīs gadus veiksmīgi darbojamies arī celtniecībā. Labprāt sniegsim profesionālu palīdzību remonta un celtniecības jautājumos."
+  

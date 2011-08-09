@@ -1,4 +1,4 @@
 <div id="logo_container">
 	<%= image_tag "elite_house_slogan.png", :id => "slogan_image" %>
-	<%= image_tag "elite_house_under_slogan.png", :id => "under_slogan_image" %>
+	<%= image_tag "elite_house_under_slogan#{('_lv' if I18n.locale == :lv).to_s}.png", :id => "under_slogan_image" %>
 </div>

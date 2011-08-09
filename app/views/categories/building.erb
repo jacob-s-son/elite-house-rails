@@ -1,0 +1,7 @@
+<p><%= t(:building_description) %></p>
+
+<div id="building_images" align="center">
+  <% building_images.each do |i| %>
+    <%= image_tag i, :class => "building_image" %>
+  <% end %>
+</div>
