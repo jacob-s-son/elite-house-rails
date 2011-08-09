@@ -38,6 +38,7 @@ set(:rails_env) { "#{stage}" }
 
 # tasks
 namespace :deploy do
+  require 'FileUtils'
   task :start, :roles => :app do
     run "touch #{current_path}/tmp/restart.txt"
   end
@@ -50,21 +51,23 @@ namespace :deploy do
   task :restart, :roles => :app do
     run "touch #{current_path}/tmp/restart.txt"
   end
+  
+  desc "Copies shared resources if do not exist"
+  task :copy_db, :roles => :app do
+    shared_path = "#{shared_path}/system/#{stage}.sqlite3"
+    local_path = "#{release_path}/db/#{stage}.sqlite3"
+    
+    FileUtils.cp(local_path, shared_path) unless File.exists?(shared_path)
+  end
 
   desc "Symlink shared resources on each release - not used"
   task :symlink_shared, :roles => :app do
-    #run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
-  end
-end
-
-namespace(:customs) do
-  task :config, :roles => :app do
     run <<-CMD
-      ln -nfs #{shared_path}/system/production_test.sqlite3 #{release_path}/db/#{stage}.sqlite3
+      ln -nfs #{shared_path}/system/#{stage}.sqlite3 #{release_path}/db/#{stage}.sqlite3
     CMD
   end
 end
 
-after 'deploy:update_code', 'deploy:symlink_shared', 'customs:config'
+after 'deploy:update_code', 'deploy:copy_db', 'deploy:symlink_shared'
 
 
