@@ -13,7 +13,7 @@
       <table id="header_table">
         <tr>
           <td>
-            <%= image_tag "visual.jpg", :id => "logo_img"%>
+            <%= image_tag ( agent_ie? ? "header_image_ie.jpg" : "header_image.jpg" ), :id => "logo_img"%>
             <div id="language_select_container">
               <%= link_to image_tag("latvian_flag.gif", :id => "lv_flag"), "javascript:select_locale('#{current_url}', 'lv')" %>
               <%= link_to image_tag("russian_flag.gif", :id => "ru_flag"), "javascript:select_locale('#{current_url}', 'ru')" %>

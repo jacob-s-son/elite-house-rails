@@ -110,4 +110,8 @@ module ApplicationHelper
   def link_to_contacts
     link_to (I18n.locale == :lv ? "Kontakti" : "Контакты"), contacts_categories_path
   end
+  
+  def agent_ie?
+    request.env['HTTP_USER_AGENT'].match(/MSIE/i)
+  end
 end
