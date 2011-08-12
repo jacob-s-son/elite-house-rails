@@ -114,4 +114,17 @@ module ApplicationHelper
   def agent_ie?
     request.env['HTTP_USER_AGENT'].match(/MSIE/i)
   end
+  
+  def page_title
+    title = case true
+      when @sub_category
+        @sub_category.name
+      when @category
+        @category.name
+      else
+        t(:main_title)
+      end  
+    
+    "EliteHouse - " + title
+  end
 end
