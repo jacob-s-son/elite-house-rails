@@ -81,7 +81,7 @@ module ApplicationHelper
   end
   
   def under_construction_msg
-    (I18n.locale == :lv ? "Lapa tiek papildināta" : "Раздел дополняется")
+    t(:under_construction_msg)
   end
   
   def current_url
@@ -104,11 +104,11 @@ module ApplicationHelper
   end
   
   def title
-    (I18n.locale == :lv ? "Par mums" : "О нас")
+    t(:about_us)
   end
   
   def link_to_contacts
-    link_to (I18n.locale == :lv ? "Kontakti" : "Контакты"), contacts_categories_path
+    link_to (t(:contacts_section_name)), contacts_categories_path
   end
   
   def agent_ie?
