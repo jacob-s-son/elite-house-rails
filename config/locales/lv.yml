@@ -8,4 +8,7 @@ lv:
   building_description: "Trīs gadus veiksmīgi darbojamies arī celtniecībā. Labprāt sniegsim profesionālu palīdzību remonta un celtniecības jautājumos."
   about_us: "Par mums"
   under_construction_msg: "Lapa tiek papildināta"
+  time:
+    formats:
+      default: "%Y-%m-%d"
   

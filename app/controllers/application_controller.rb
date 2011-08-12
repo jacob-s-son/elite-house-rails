@@ -20,10 +20,4 @@ class ApplicationController < ActionController::Base
       end
     end
   end
-  
-  def under_development
-    if RAILS_ENV == "production" && params[:action] != "under_construction"
-      redirect_to under_construction_path
-    end
-  end
 end

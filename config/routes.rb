@@ -3,6 +3,7 @@ EliteHouse::Application.routes.draw do
    resources :categories, :only => [ :index ] do
      get 'contacts', :on => :collection
      get 'building', :on => :collection
+     get 'sitemap',  :on => :collection
      resources :sub_categories, :only => [ :index ]
    end
    
@@ -19,9 +20,9 @@ EliteHouse::Application.routes.draw do
      match '/' => "base#admin_actions"
    end
    
+   match '/sitemap(.:format)' => 'categories#sitemap'
    match '/:locale' => 'categories#index'
    match '/', :to => redirect('/lv/categories')
-   match '/under_construction', :to => 'categories#under_construction', :via => :get
    root :to => 'categories#index'
  end
 end
