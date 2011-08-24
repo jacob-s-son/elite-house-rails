@@ -4,9 +4,11 @@
     <title>
       <%= page_title %>
     </title>
-		<meta name="google-site-verification" content="0IuatFEWtgsmAgZRtbYqexzrLG3ZCct_aXouNm_Q3os" />
+    <meta name="description" content="<%= t(:content_description) %>" />
+    <meta name="keywords" content="Диваны, Угловые диваны, Кровати, Спальни, Мягкая мебель, Dīvāni, Stūra dīvāni, Viesistabas, Gultas, Guļamistabas,  Mīkstās mēbeles" />
     <%= stylesheet_link_tag :all %>
-    <%= javascript_include_tag :all %>
+    <%= javascript_include_tag :defaults %>
+    <%= javascript_include_tag "facebox", "hoverIntent", "jquery.bgiframe.min", "superfish", "supersubs", "transitions" %>
     <%= csrf_meta_tag %>
 		<script type="text/javascript">
 			var _gaq = _gaq || [];
