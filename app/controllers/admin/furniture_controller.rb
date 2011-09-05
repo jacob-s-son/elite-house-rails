@@ -7,11 +7,11 @@ class Admin::FurnitureController < Admin::BaseController
 
   def new
     @furniture = Furniture.new
-    3.times { @furniture.images.build }
+    10.times { @furniture.images.build }
   end
 
   def edit
-    number = 3 - @furniture.images.size
+    number = 10 - @furniture.images.size
     number.times { @furniture.images.build }
     render :new
   end
