@@ -387,6 +387,12 @@ img.building_image {
 	margin-top:10px;
 }
 
+iframe#youtube {
+	width:420px; 
+	height:315px;
+	margin-top:20px;
+}
+
 /*li#home_page {
 	margin-left:0px !important;
 }
