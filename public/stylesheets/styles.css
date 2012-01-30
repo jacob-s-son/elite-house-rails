@@ -144,15 +144,16 @@ color: White;
 }*/
 
 table#header_table {
-	width:750px; 
+	width:1024px; 
 	border-width:0px;
 	border-collapse:collapse;
 	margin:0px;
-	margin-left:-10px;
+/*  margin-left: 20px;*/
 }
 
 img#logo_img {
 	width:750px; 
+	margin-left: 100px;
 	height:190px;
 }
 
@@ -172,10 +173,11 @@ img#logo_spacer_img {
 }
 
 table#content_table{
-	width:750px;
+	width:1024px;
 	border-collapse:collapse;
 	border-width:0px;
 	margin:0;
+	padding-left: 10px;
 	
 }
 
@@ -213,6 +215,10 @@ ul#main_menu li {
 	display:inline-block;
 /*	width:100px;*/
 	margin-left:20px;
+}
+
+ul#main_menu > :first-child {
+	margin-left:0px;
 }
 
 ul#main_menu a {
@@ -311,12 +317,12 @@ div#frame_container {
 /*	align:middle;*/
 	margin:auto;
 /*	padding-left:20px;*/
-	width:750px;
-	height:440px;
+	width:1024px;
+	height:615px;
 }
 
 table#footer_table {
-	width:756px; 
+	width:1030px; 
 	border-collapse:collapse;
 	border-width:0px;
 	margin:0;
