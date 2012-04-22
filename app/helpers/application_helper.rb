@@ -48,7 +48,7 @@ module ApplicationHelper
   end
   
   def menu_items
-    items = Category.all.sort_by(&:priority).map do |category|
+    items = Category.active.sort_by(&:priority).map do |category|
       {
         :name => category.name,
         :key => "main_#{category.id}".to_sym,
@@ -61,6 +61,13 @@ module ApplicationHelper
     items.insert(0, home_page)
     items.insert(-1, other_services)
     items.insert(-1, contacts)
+  end
+  
+  def iframe_link
+    case
+      when @category.dining_room? then "http://docs.google.com/gview?url=#{image_url 'public/other/dining_room.pdf'}&embedded=true"
+      when @category.guest_room?  then "http://www.mebin.pl//ru/o-firmie"
+    end
   end
   
   def furniture_url(f)
@@ -84,6 +91,10 @@ module ApplicationHelper
     t(:under_construction_msg)
   end
   
+  def image_url(source)
+  "#{root_url}#{image_path(source)}"
+  end
+  
   def current_url
     request.url
   end
@@ -95,11 +106,13 @@ module ApplicationHelper
     end
   end
   
+  def first_gallery_image
+    Image.first_gallery_image.picture.url :gallery
+  end
+  
   def args_for_gallery
-    Dir.chdir("#{RAILS_ROOT}/public/images/gallery")
-    Dir.glob("*.jpg").map do |f| 
-      f = "gallery/#{f}"
-      "'#{image_path f}'"
+    Image.where("gallery_flag = 't'").map do |img|
+      "'#{image_path img.picture.url(:gallery)}'"
     end.join(" , ")
   end
   

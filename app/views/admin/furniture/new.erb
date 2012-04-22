@@ -16,8 +16,10 @@
         </div>
       <% else %>
         <%= builder.file_field :picture %>
-        <%= builder.input :main %>
       <% end %>
+      
+      <%= builder.input :main %>
+      <%= builder.input :gallery_flag %>
   <% end %>
   
 	<%=	f.button :submit, :value => "Saglabāt" %>

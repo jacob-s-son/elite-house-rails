@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110807172102) do
+ActiveRecord::Schema.define(:version => 20120422175604) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(:version => 20110807172102) do
     t.integer  "priority"
     t.text     "description"
     t.text     "description_ru"
+    t.boolean  "active"
+    t.boolean  "special"
   end
 
   create_table "furnitures", :force => true do |t|
@@ -42,6 +44,7 @@ ActiveRecord::Schema.define(:version => 20110807172102) do
     t.datetime "created_at"
     t.integer  "furniture_id"
     t.boolean  "main"
+    t.boolean  "gallery_flag"
   end
 
   create_table "sub_categories", :force => true do |t|

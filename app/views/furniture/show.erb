@@ -1,10 +1,10 @@
 <div id="show_left_column">
-  <%= image_tag @furniture.main_image.url(:large), :id => "furniture_first_image" %>
+  <%= image_tag @furniture.main_image.url(:large), :id => "furniture_first_image", :title => @furniture.main_image.id %>
 </div>
 <div id="show_right_column">
   <% @furniture.images.each do |i| %>
     <div class="thumb_image">
-      <%= link_to image_tag (i.url(:thumb), :border =>0) , "javascript:swap_furniture_image('#{i.url(:large)}')" %>
+      <%= link_to image_tag (i.url(:thumb), :border =>0) , "javascript:swap_furniture_image('#{i.url(:large)}', '#{i.id}')" %>
     </div>
   <% end %>
 </div>

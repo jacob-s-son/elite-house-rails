@@ -1,5 +1,6 @@
-function swap_furniture_image(url) {
+function swap_furniture_image(url, id) {
 	$('#furniture_first_image').attr("src", url);
+	$('#furniture_first_image').attr("title", id);
 }
 
 function remove_fields(link) {  
